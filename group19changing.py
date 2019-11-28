@@ -5,7 +5,9 @@ import numpy as np
 #import serial
 #import serial.tools.list_ports as port_list
 
-
+#implement other dropdown menu modes
+#start indexing modes at AOO=0 then ascend by one to DOOR
+#add if statement to check for correct values with dropbox
 
 
 class Window(Frame):
@@ -84,6 +86,34 @@ class Window(Frame):
 
                     f.close()
 
+                    data_array = np.arange(26)
+                    data_array[0]=np.uint8(0)
+                    data_array[1]=np.uint16(LowerRateLimitEntry.get())
+                    data_array[2]=np.uint16(UpperRateLimitEntry.get())
+                    data_array[3]=np.uint16(0)
+                    data_array[4]=np.uint16(0)
+                    data_array[5]=np.uint16(0)
+                    data_array[6]=np.uint16(0)
+                    data_array[7]=np.uint16(0)
+                    data_array[8]=np.uint16(AtrialAmplitudeEntry.get())
+                    data_array[9]=np.uint16(AtrialPulseWidthEntry.get())
+                    data_array[10]=np.uint16(0)
+                    data_array[11]=np.uint16(0)
+                    data_array[12]=np.uint16(0)
+                    data_array[13]=np.uint16(0)
+                    data_array[14]=np.uint16(0)
+                    data_array[15]=np.uint16(0)
+                    data_array[16]=np.uint16(0)
+                    data_array[17]=np.uint16(0)
+                    data_array[18]=np.uint16(0)
+                    data_array[19]=np.uint16(0)
+                    data_array[20]=np.uint16(0)
+                    data_array[21]=np.uint16(0)
+                    data_array[22]=np.uint16(0)
+                    data_array[23]=np.uint16(0)
+                    data_array[24]=np.uint16(0)
+                    print(data_array)
+
                 send=Button(AOOConfigApp,text='Register Parameters',command=clicked_AOOsend)
                 send.place(x=50,y=130)
 
@@ -135,6 +165,37 @@ class Window(Frame):
 
                     f.close()
 
+                    data_array = np.arange(25)
+                    data_array[0]=np.uint16(5)
+                    data_array[1]=np.uint16(LowerRateLimitEntry.get())
+                    data_array[2]=np.uint16(UpperRateLimitEntry.get())
+                    data_array[3]=np.uint16(0)
+                    data_array[4]=np.uint16(0)
+                    data_array[5]=np.uint16(0)
+                    data_array[6]=np.uint16(0)
+                    data_array[7]=np.uint16(0)
+                    data_array[8]=np.uint16(VentricularAmplitudeEntry.get())
+                    data_array[9]=np.uint16(VentricularPulseWidthEntry.get())
+                    data_array[10]=np.uint16(0)
+                    data_array[11]=np.uint16(0)
+                    data_array[12]=np.uint16(0)
+                    data_array[13]=np.uint16(0)
+                    data_array[14]=np.uint16(0)
+                    data_array[15]=np.uint16(0)
+                    data_array[16]=np.uint16(0)
+                    data_array[17]=np.uint16(0)
+                    data_array[18]=np.uint16(0)
+                    data_array[19]=np.uint16(0)
+                    data_array[20]=np.uint16(0)
+                    data_array[21]=np.uint16(0)
+                    data_array[22]=np.uint16(0)
+                    data_array[23]=np.uint16(0)
+                    data_array[24]=np.uint16(0)
+
+
+                    #data_array[]=np.uint16()
+                    print(data_array)
+
                 send=Button(VOOConfigApp,text='Register Parameters',command=clicked_VOOsend)
                 send.place(x=50,y=130)
 
@@ -183,36 +244,6 @@ class Window(Frame):
 
                 def clicked_AAIsend( ):
 
-                    data_array = np.arange(25)
-                    data_array[0]=np.uint16(4)
-                    data_array[1]=np.uint16(LowerRateLimitEntry.get())
-                    data_array[2]=np.uint16(UpperRateLimitEntry.get())
-                    data_array[3]=np.uint16(0)
-                    data_array[4]=np.uint16(0)
-                    data_array[5]=np.uint16(0)
-                    data_array[6]=np.uint16(0)
-                    data_array[7]=np.uint16(0)
-                    data_array[8]=np.uint16(AtrialAmplitudeEntry.get())
-                    data_array[9]=np.uint16(AtrialPulseWidthEntry.get())
-                    data_array[10]=np.uint16(AtrialSensitivityEntry.get())
-                    data_array[11]=np.uint16(0)
-                    data_array[12]=np.uint16(ARPEntry.get())
-                    data_array[13]=np.uint16(PVARPEntry.get())
-                    data_array[14]=np.uint16(0)
-                    data_array[15]=np.uint16(HysteresisEntry.get())
-                    data_array[16]=np.uint16(RateSmoothEntry.get())
-                    data_array[17]=np.uint16(0)
-                    data_array[18]=np.uint16(0)
-                    data_array[19]=np.uint16(0)
-                    data_array[20]=np.uint16(0)
-                    data_array[21]=np.uint16(0)
-                    data_array[22]=np.uint16(0)
-                    data_array[23]=np.uint16(0)
-                    data_array[24]=np.uint16(0)
-
-
-                    #data_array[]=np.uint16()
-                    print(data_array)
                     #
                     #
                     #
@@ -259,6 +290,38 @@ class Window(Frame):
                     f.write("\n")
                     f.close()
 
+                    data_array = np.arange(25)
+                    data_array[0]=np.uint16(4)
+                    data_array[1]=np.uint16(LowerRateLimitEntry.get())
+                    data_array[2]=np.uint16(UpperRateLimitEntry.get())
+                    data_array[3]=np.uint16(0)
+                    data_array[4]=np.uint16(0)
+                    data_array[5]=np.uint16(0)
+                    data_array[6]=np.uint16(0)
+                    data_array[7]=np.uint16(0)
+                    data_array[8]=np.uint16(AtrialAmplitudeEntry.get())
+                    data_array[9]=np.uint16(AtrialPulseWidthEntry.get())
+                    data_array[10]=np.uint16(AtrialSensitivityEntry.get())
+                    data_array[11]=np.uint16(0)
+                    data_array[12]=np.uint16(ARPEntry.get())
+                    data_array[13]=np.uint16(PVARPEntry.get())
+                    data_array[14]=np.uint16(0)
+                    data_array[15]=np.uint16(HysteresisEntry.get())
+                    data_array[16]=np.uint16(RateSmoothEntry.get())
+                    data_array[17]=np.uint16(0)
+                    data_array[18]=np.uint16(0)
+                    data_array[19]=np.uint16(0)
+                    data_array[20]=np.uint16(0)
+                    data_array[21]=np.uint16(0)
+                    data_array[22]=np.uint16(0)
+                    data_array[23]=np.uint16(0)
+                    data_array[24]=np.uint16(0)
+
+
+                    #data_array[]=np.uint16()
+                    print(data_array)
+
+
                 send=Button(AAIConfigApp,text='Register Parameters',command=clicked_AAIsend)
                 send.place(x=50,y=280)
 
@@ -270,7 +333,6 @@ class Window(Frame):
                 LowerRateLimitlabel= Label(VVIConfigApp, text="Lower Rate Limit: ")
                 LowerRateLimitlabel.place(x=10, y=10)
                 LowerRateLimitEntry=Entry(VVIConfigApp)
-                #LowerRateLimitEntry=np.uint8(Entry(VVIConfigApp))
                 LowerRateLimitEntry.place(x=150,y=10)
                 UpperRateLimitlabel= Label(VVIConfigApp, text="Upper Rate Limit: ")
                 UpperRateLimitlabel.place(x=10, y=40)
@@ -302,7 +364,7 @@ class Window(Frame):
                 RateSmoothEntry.place(x=150,y=190)
 
                 def clicked_VVIsend( ):
-                    print(np.uint16(LowerRateLimitEntry.get()))
+
                     f=open("C:/Users/strep/Desktop/tron/3K04/ParametersForUsers.txt","a")
                     f.write("Pacing mode: VVI \n")
                     f.write("Lower Rate Limit: ")
@@ -339,6 +401,38 @@ class Window(Frame):
                     f.write("\n")
                     f.close()
 
+                    data_array = np.arange(25)
+                    data_array[0]=np.uint16(6)
+                    data_array[1]=np.uint16(LowerRateLimitEntry.get())
+                    data_array[2]=np.uint16(UpperRateLimitEntry.get())
+                    data_array[3]=np.uint16(0)
+                    data_array[4]=np.uint16(0)
+                    data_array[5]=np.uint16(0)
+                    data_array[6]=np.uint16(0)
+                    data_array[7]=np.uint16(0)
+                    data_array[8]=np.uint16(VentricularAmplitudeEntry.get())
+                    data_array[9]=np.uint16(VentricularPulseWidthEntry.get())
+                    data_array[10]=np.uint16(VentricularSensitivityEntry.get())
+                    data_array[11]=np.uint16(VRPEntry.get())
+                    data_array[12]=np.uint16(0)
+                    data_array[13]=np.uint16(0)
+                    data_array[14]=np.uint16(0)
+                    data_array[15]=np.uint16(HysteresisEntry.get())
+                    data_array[16]=np.uint16(RateSmoothEntry.get())
+                    data_array[17]=np.uint16(0)
+                    data_array[18]=np.uint16(0)
+                    data_array[19]=np.uint16(0)
+                    data_array[20]=np.uint16(0)
+                    data_array[21]=np.uint16(0)
+                    data_array[22]=np.uint16(0)
+                    data_array[23]=np.uint16(0)
+                    data_array[24]=np.uint16(0)
+
+
+                    #data_array[]=np.uint16()
+                    print(data_array)
+
+
                 send=Button(VVIConfigApp,text='Register Parameters',command=clicked_VVIsend)
                 send.place(x=50,y=220)
 
@@ -348,12 +442,14 @@ class Window(Frame):
 
         def clicked_reg( ):
             f=open("C:/Users/strep/Desktop/tron/3K04/RegisteredPaceMakerUsers.txt","a")
+
             f.write(self.Username.get())
             f.write("\t")
             f.write(self.Password.get())
             f.write("\n")
             f.close()
             messagebox.showinfo('Thank You!', 'You are now registered.')
+
 
         def clicked_log( ):
             file=open("C:/Users/strep/Desktop/tron/3K04/RegisteredPaceMakerUsers.txt","r")
@@ -377,7 +473,7 @@ class Window(Frame):
 
 
                         BradycardiaOperatingMode = StringVar(PacemakerConfigApp)
-                        BradycardiaOperatingMode.set("AAT")
+                        BradycardiaOperatingMode.set("AOO")
 
 
                         OpMode = OptionMenu(PacemakerConfigApp, BradycardiaOperatingMode, "AOO","AAI","VOO","VVI","VDD","DOO","DDI","DDD","AOOR","AAIR","VOOR","VVIR","VDDR","DOOR")
