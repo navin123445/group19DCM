@@ -2,8 +2,14 @@ from tkinter import *
 
 from tkinter import messagebox
 import numpy as np
-#import serial
-#import serial.tools.list_ports as port_list
+import serial
+import serial.tools.list_ports as port_list
+import os
+
+dirname = os.path.dirname(__file__)
+userfilename = os.path.join(dirname, 'login_info.txt')
+paramfilename = os.path.join(dirname, 'user_param_data.txt')
+#ser = serial.Serial('COM5',115200,serial.EIGHTBITS,serial.PARITY_NONE,serial.STOPBITS_ONE)
 
 #implement other dropdown menu modes
 #start indexing modes at AOO=0 then ascend by one to DOOR
@@ -65,7 +71,7 @@ class Window(Frame):
 
 
                 def clicked_AOOsend( ):
-                    f=open("C:/Users/strep/Desktop/tron/3K04/ParametersForUsers.txt","a")
+                    f=open(paramfilename,"a")
                     f.write("Pacing mode: AOO \n")
                     f.write("Lower Rate Limit: ")
                     f.write(LowerRateLimitEntry.get())
@@ -146,7 +152,7 @@ class Window(Frame):
                     #
 
 
-                    f=open("C:/Users/strep/Desktop/tron/3K04/ParametersForUsers.txt","a")
+                    f=open(paramfilename,"a")
                     f.write("Pacing mode: VOO \n")
                     f.write("Lower Rate Limit: ")
                     f.write(LowerRateLimitEntry.get())
@@ -255,7 +261,7 @@ class Window(Frame):
                     #
                     #
 
-                    f=open("C:/Users/strep/Desktop/tron/3K04/ParametersForUsers.txt","a")
+                    f=open(paramfilename,"a")
                     f.write("Pacing mode: AAI \n")
                     f.write("Lower Rate Limit: ")
                     f.write(LowerRateLimitEntry.get())
@@ -370,7 +376,7 @@ class Window(Frame):
 
                 def clicked_VVIsend( ):
 
-                    f=open("C:/Users/strep/Desktop/tron/3K04/ParametersForUsers.txt","a")
+                    f=open(paramfilename,"a")
                     f.write("Pacing mode: VVI \n")
                     f.write("Lower Rate Limit: ")
                     f.write(LowerRateLimitEntry.get())
@@ -500,7 +506,7 @@ class Window(Frame):
                 ATRFallbackTEntry.place(x=150,y=370)
 
                 def clicked_VDDsend( ):
-                    f=open("C:/Users/strep/Desktop/tron/3K04/ParametersForUsers.txt","a")
+                    f=open(paramfilename,"a")
                     f.write("Pacing mode: VDD \n")
                     f.write("Lower Rate Limit: ")
                     f.write(LowerRateLimitEntry.get())
@@ -615,7 +621,7 @@ class Window(Frame):
                     #
 
 
-                    f=open("C:/Users/strep/Desktop/tron/3K04/ParametersForUsers.txt","a")
+                    f=open(paramfilename,"a")
                     f.write("Pacing mode: DOO \n")
                     f.write("Lower Rate Limit: ")
                     f.write(LowerRateLimitEntry.get())
@@ -739,7 +745,7 @@ class Window(Frame):
                     #
 
 
-                    f=open("C:/Users/strep/Desktop/tron/3K04/ParametersForUsers.txt","a")
+                    f=open(paramfilename,"a")
                     f.write("Pacing mode: DDI \n")
                     f.write("Lower Rate Limit: ")
                     f.write(LowerRateLimitEntry.get())
@@ -893,7 +899,7 @@ class Window(Frame):
                     #
 
 
-                    f=open("C:/Users/strep/Desktop/tron/3K04/ParametersForUsers.txt","a")
+                    f=open(paramfilename,"a")
                     f.write("Pacing mode: DDD \n")
                     f.write("Lower Rate Limit: ")
                     f.write(LowerRateLimitEntry.get())
@@ -998,7 +1004,7 @@ class Window(Frame):
                 RecoveryTimeEntry.place(x=120,y=250)
 
                 def clicked_AOORsend( ):
-                    f=open("C:/Users/strep/Desktop/tron/3K04/ParametersForUsers.txt","a")
+                    f=open(paramfilename,"a")
                     f.write("Pacing mode: AOOR \n")
                     f.write("Lower Rate Limit: ")
                     f.write(LowerRateLimitEntry.get())
@@ -1123,7 +1129,7 @@ class Window(Frame):
                     #
                     #
 
-                    f=open("C:/Users/strep/Desktop/tron/3K04/ParametersForUsers.txt","a")
+                    f=open(paramfilename,"a")
                     f.write("Pacing mode: AAIR \n")
                     f.write("Lower Rate Limit: ")
                     f.write(LowerRateLimitEntry.get())
@@ -1247,7 +1253,7 @@ class Window(Frame):
                     #
 
 
-                    f=open("C:/Users/strep/Desktop/tron/3K04/ParametersForUsers.txt","a")
+                    f=open(paramfilename,"a")
                     f.write("Pacing mode: VOOR \n")
                     f.write("Lower Rate Limit: ")
                     f.write(LowerRateLimitEntry.get())
@@ -1362,7 +1368,7 @@ class Window(Frame):
 
                 def clicked_VVIRsend( ):
 
-                    f=open("C:/Users/strep/Desktop/tron/3K04/ParametersForUsers.txt","a")
+                    f=open(paramfilename,"a")
                     f.write("Pacing mode: VVIR \n")
                     f.write("Lower Rate Limit: ")
                     f.write(LowerRateLimitEntry.get())
@@ -1513,7 +1519,7 @@ class Window(Frame):
                 RecoveryTimeEntry.place(x=150,y=520)
 
                 def clicked_VDDRsend( ):
-                    f=open("C:/Users/strep/Desktop/tron/3K04/ParametersForUsers.txt","a")
+                    f=open(paramfilename,"a")
                     f.write("Pacing mode: VDDR \n")
                     f.write("Lower Rate Limit: ")
                     f.write(LowerRateLimitEntry.get())
@@ -1646,7 +1652,7 @@ class Window(Frame):
                     #
 
 
-                    f=open("C:/Users/strep/Desktop/tron/3K04/ParametersForUsers.txt","a")
+                    f=open(paramfilename,"a")
                     f.write("Pacing mode: DOOR \n")
                     f.write("Lower Rate Limit: ")
                     f.write(LowerRateLimitEntry.get())
@@ -1713,7 +1719,7 @@ class Window(Frame):
 
 
         def clicked_reg( ):
-            f=open("C:/Users/strep/Desktop/tron/3K04/RegisteredPaceMakerUsers.txt","a")
+            f=open(userfilename,"a")
 
             f.write(self.Username.get())
             f.write("\t")
@@ -1724,7 +1730,7 @@ class Window(Frame):
 
 
         def clicked_log( ):
-            file=open("C:/Users/strep/Desktop/tron/3K04/RegisteredPaceMakerUsers.txt","r")
+            file=open(userfilename,"r")
             RegisteredUser= False
             for line in file:
                 line = line.strip().split("\t")
@@ -1732,7 +1738,7 @@ class Window(Frame):
                     RegisteredUser = True
                     if self.Password.get() == line[1]:
                         messagebox.showinfo('Thank You.','You have now logged in')
-                        freg=open("C:/Users/strep/Desktop/tron/3K04/ParametersForUsers.txt","a")
+                        freg=open(paramfilename,"a")
                         freg.write("\n")
                         freg.write("Pacemaker Configuration for User: ")
                         freg.write(self.Username.get())
