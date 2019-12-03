@@ -78,6 +78,9 @@ class Window(Frame):
                     if int(UpperRateLimitEntry.get())>175 or int(UpperRateLimitEntry.get())<50:
                         messagebox.showinfo('Message','Invalid input for Upper Rate Limit\nMust be within 50-175ppm')
                         return
+                    if int(UpperRateLimitEntry.get())<int(LowerRateLimitEntry.get()):
+                        messagebox.showinfo('Message', 'Invalid input, Upper Rate limit must be greater than Lower Rate limit')
+                        return
                     if (float(AtrialAmplitudeEntry.get()))>3.2 or (float(AtrialAmplitudeEntry.get()))<0.5:
                         messagebox.showinfo('Message','Invalid Input for Atrial Amplitude\nMust be within 0.5-3.2V ') # regulated
                         return
@@ -173,6 +176,9 @@ class Window(Frame):
                         return
                     if float(VentricularPulseWidthEntry.get())>20.0 or float(VentricularPulseWidthEntry.get())<0.1:
                         messagebox.showinfo('Message','Invalid Input for Ventricular Pulse Width\nMust be within 0.1-1.9ms(20ms max for testing purposes)')
+                        return
+                    if int(UpperRateLimitEntry.get())<int(LowerRateLimitEntry.get()):
+                        messagebox.showinfo('Message', 'Invalid input, Upper Rate limit must be greater than Lower Rate limit')
                         return
 
 
@@ -306,6 +312,9 @@ class Window(Frame):
                     if int(RateSmoothEntry.get())!=0 and int(RateSmoothEntry.get())!=3 and int(RateSmoothEntry.get())!=6 and int(RateSmoothEntry.get())!=9 and int(RateSmoothEntry.get())!=12 and int(RateSmoothEntry.get())!=15 and int(RateSmoothEntry.get())!=18 and int(RateSmoothEntry.get())!=21:
                         messagebox.showinfo('Message',"Invalid input for Rate Smoothing\n Values include:0, 3, 6, 9, 12, 15, 18, 21")
                         return
+                    if int(UpperRateLimitEntry.get())<int(LowerRateLimitEntry.get()):
+                        messagebox.showinfo('Message', 'Invalid input, Upper Rate limit must be greater than Lower Rate limit')
+                        return
                     #
                     #
                     #
@@ -426,7 +435,9 @@ class Window(Frame):
                 RateSmoothEntry.place(x=150,y=220)
 
                 def clicked_VVIsend( ):
-
+                    if int(UpperRateLimitEntry.get())<int(LowerRateLimitEntry.get()):
+                        messagebox.showinfo('Message', 'Invalid input, Upper Rate limit must be greater than Lower Rate limit')
+                        return
                     if int(LowerRateLimitEntry.get())>175 or int(LowerRateLimitEntry.get())<30:
                         messagebox.showinfo('Message','Invalid Input for Lower Rate Limit\nMust be within 30-175ppm')
                         return
@@ -619,6 +630,9 @@ class Window(Frame):
                     if int(DynamicAVDelayEntry.get)!=0 or int(DynamicAVDelayEntry.get)!=1: # should we do min dynamic av delay with 30-100?
                         messagebox.showinfo('Message','Invalid Input for Dynamic AV Delay\nMust be 0 or 1')
                         return
+                    if int(UpperRateLimitEntry.get())<int(LowerRateLimitEntry.get()):
+                        messagebox.showinfo('Message', 'Invalid input, Upper Rate limit must be greater than Lower Rate limit')
+                        return
                     f=open(paramfilename,"a")
                     f.write("Pacing mode: VDD \n")
                     f.write("Lower Rate Limit: ")
@@ -730,6 +744,9 @@ class Window(Frame):
 
 
                 def clicked_DOOsend( ):
+                    if int(UpperRateLimitEntry.get())<int(LowerRateLimitEntry.get()):
+                        messagebox.showinfo('Message', 'Invalid input, Upper Rate limit must be greater than Lower Rate limit')
+                        return
                     if int(LowerRateLimitEntry.get())>175 or int(LowerRateLimitEntry.get())<30:
                         messagebox.showinfo('Message','Invalid Input for Lower Rate Limit\nMust be within 30-175ppm')
                         return
@@ -870,6 +887,9 @@ class Window(Frame):
                 PVARPEntry.place(x=150,y=340)
 
                 def clicked_DDIsend( ):
+                    if int(UpperRateLimitEntry.get())<int(LowerRateLimitEntry.get()):
+                        messagebox.showinfo('Message', 'Invalid input, Upper Rate limit must be greater than Lower Rate limit')
+                        return
                     if int(LowerRateLimitEntry.get())>175 or int(LowerRateLimitEntry.get())<30:
                         messagebox.showinfo('Message','Invalid Input for Lower Rate Limit\nMust be within 30-175ppm')
                         return
@@ -1058,6 +1078,9 @@ class Window(Frame):
                 ATRFallbackTEntry.place(x=150,y=580)
 
                 def clicked_DDDsend( ):
+                    if int(UpperRateLimitEntry.get())<int(LowerRateLimitEntry.get()):
+                        messagebox.showinfo('Message', 'Invalid input, Upper Rate limit must be greater than Lower Rate limit')
+                        return
                     if int(LowerRateLimitEntry.get())>175 or int(LowerRateLimitEntry.get())<30:
                         messagebox.showinfo('Message','Invalid Input for Lower Rate Limit\nMust be within 30-175ppm')
                         return
@@ -1236,6 +1259,9 @@ class Window(Frame):
                 RecoveryTimeEntry.place(x=120,y=250)
 
                 def clicked_AOORsend( ):
+                    if int(UpperRateLimitEntry.get())<int(LowerRateLimitEntry.get()):
+                        messagebox.showinfo('Message', 'Invalid input, Upper Rate limit must be greater than Lower Rate limit')
+                        return
                     if int(LowerRateLimitEntry.get())>175 or int(LowerRateLimitEntry.get())<30:
                         messagebox.showinfo('Message','Invalid Input for Lower Rate Limit\nMust be within 30-175ppm')
                         return
@@ -1379,6 +1405,9 @@ class Window(Frame):
 
 
                 def clicked_AAIRsend( ):
+                    if int(UpperRateLimitEntry.get())<int(LowerRateLimitEntry.get()):
+                        messagebox.showinfo('Message', 'Invalid input, Upper Rate limit must be greater than Lower Rate limit')
+                        return
                     if int(LowerRateLimitEntry.get())>175 or int(LowerRateLimitEntry.get())<30:
                         messagebox.showinfo('Message','Invalid Input for Lower Rate Limit\nMust be within 30-175ppm')
                         return
@@ -1539,6 +1568,9 @@ class Window(Frame):
                 RecoveryTimeEntry.place(x=120,y=250)
 
                 def clicked_VOORsend( ):
+                    if int(UpperRateLimitEntry.get())<int(LowerRateLimitEntry.get()):
+                        messagebox.showinfo('Message', 'Invalid input, Upper Rate limit must be greater than Lower Rate limit')
+                        return
                     if int(ReactionTimeEntry.get())<10 or int(ReactionTimeEntry.get())>50:
                         messagebox.showinfo('Message','Invalid Input for Reaction Time \nMust be within 10-50 seconds')
                         return
@@ -1679,6 +1711,9 @@ class Window(Frame):
                 RecoveryTimeEntry.place(x=150,y=370)
 
                 def clicked_VVIRsend( ):
+                    if int(UpperRateLimitEntry.get())<int(LowerRateLimitEntry.get()):
+                        messagebox.showinfo('Message', 'Invalid input, Upper Rate limit must be greater than Lower Rate limit')
+                        return
                     if int(LowerRateLimitEntry.get())>175 or int(LowerRateLimitEntry.get())<30:
                         messagebox.showinfo('Message','Invalid Input for Lower Rate Limit\nMust be within 30-175ppm')
                         return
@@ -1867,6 +1902,9 @@ class Window(Frame):
                 RecoveryTimeEntry.place(x=150,y=520)
 
                 def clicked_VDDRsend( ):
+                    if int(UpperRateLimitEntry.get())<int(LowerRateLimitEntry.get()):
+                        messagebox.showinfo('Message', 'Invalid input, Upper Rate limit must be greater than Lower Rate limit')
+                        return
                     if int(LowerRateLimitEntry.get())>175 or int(LowerRateLimitEntry.get())<30:
                         messagebox.showinfo('Message','Invalid Input for Lower Rate Limit\nMust be within 30-175ppm')
                         return
@@ -2044,6 +2082,9 @@ class Window(Frame):
                 RecoveryTimeEntry.place(x=150,y=370)
 
                 def clicked_DOORsend( ):
+                    if int(UpperRateLimitEntry.get())<int(LowerRateLimitEntry.get()):
+                        messagebox.showinfo('Message', 'Invalid input, Upper Rate limit must be greater than Lower Rate limit')
+                        return                    
                     if int(ReactionTimeEntry.get())<10 or int(ReactionTimeEntry.get())>50:
                         messagebox.showinfo('Message','Invalid Input for Reaction Time \nMust be within 10-50 seconds')
                         return
