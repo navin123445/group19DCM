@@ -5,6 +5,8 @@ import numpy as np
 import serial
 import serial.tools.list_ports as port_list
 import os
+import locale
+from locale import atof
 
 dirname = os.path.dirname(__file__)
 userfilename = os.path.join(dirname, 'login_info.txt')
@@ -71,6 +73,19 @@ class Window(Frame):
 
 
                 def clicked_AOOsend( ):
+                    if int(LowerRateLimitEntry.get())>175 or int(LowerRateLimitEntry.get())<30:
+                        messagebox.showinfo('Message','Invalid Input for Lower Rate Limit\nMust be within 30-175ppm')
+                        return
+                    if int(UpperRateLimitEntry.get())>175 or int(UpperRateLimitEntry.get())<50:
+                        messagebox.showinfo('Message','Invalid input for Upper Rate Limit\nMust be within 50-175ppm')
+                        return
+                    if (float(AtrialAmplitudeEntry.get()))>3.2 or (float(AtrialAmplitudeEntry.get()))<0.5:
+                        messagebox.showinfo('Message','Invalid Input for Atrial Amplitude\nMust be within 0.5-3.2V ') # regulated
+                        return
+                    if float(AtrialPulseWidthEntry)>20.0 or float(AtrialPulseWidthEntry)<0.1:
+                        messagebox.showinfo('Message','Invalid Input for Ventricular Pulse Width\nMust be within 0.1-1.9ms (20ms max for testing purposes)')
+                        return
+
                     f=open(paramfilename,"a")
                     f.write("Pacing mode: AOO \n")
                     f.write("Lower Rate Limit: ")
@@ -100,9 +115,10 @@ class Window(Frame):
                     data_array[4]=np.uint16(0)
                     data_array[5]=np.uint16(0)
                     data_array[6]=np.uint16(0)
-                    data_array[7]=np.uint16(AtrialAmplitudeEntry.get())
+                    tempAtrial=(10*float(AtrialAmplitudeEntry.get()))
+                    data_array[7]=np.uint16(10*float(AtrialAmplitudeEntry.get()))
                     data_array[8]=np.uint16(0)
-                    data_array[9]=np.uint16(AtrialPulseWidthEntry.get())
+                    data_array[9]=np.uint16(100*float(AtrialPulseWidthEntry.get()))
                     data_array[10]=np.uint16(0)
                     data_array[11]=np.uint16(0)
                     data_array[12]=np.uint16(0)
@@ -119,7 +135,7 @@ class Window(Frame):
                     data_array[23]=np.uint16(0)
                     data_array[24]=np.uint16(0)
                     data_array[25]=np.uint16(0)
-
+                    print(type(AtrialAmplitudeEntry.get()))
                     print(data_array)
 
                 send=Button(AOOConfigApp,text='Register Parameters',command=clicked_AOOsend)
@@ -147,9 +163,18 @@ class Window(Frame):
                 VentricularPulseWidthEntry.place(x=150,y=100)
 
                 def clicked_VOOsend( ):
-                    #VOO array data
-                    #
-                    #
+                    if int(LowerRateLimitEntry.get())>175 or int(LowerRateLimitEntry.get())<30:
+                        messagebox.showinfo('Message','Invalid Input for Lower Rate Limit\nMust be within 30-175ppm')
+                        return
+                    if int(UpperRateLimitEntry.get())>175 or int(UpperRateLimitEntry.get())<50:
+                        messagebox.showinfo('Message','Invalid input for Upper Rate Limit\nMust be within 50-175ppm')
+                        return
+                    if float(VentricularAmplitudeEntry.get())>7.0 or float(VentricularAmplitudeEntry.get())<3.5:
+                        messagebox.showinfo('Message','Invalid Input for Ventricular Amplitude\nMust be within 3.5-7.0V')
+                        return
+                    if float(VentricularPulseWidthEntry.get())>20.0 or float(VentricularPulseWidthEntry.get())<0.1:
+                        messagebox.showinfo('Message','Invalid Input for Ventricular Pulse Width\nMust be within 0.1-1.9ms(20ms max for testing purposes)')
+                        return
 
 
                     f=open(paramfilename,"a")
@@ -182,9 +207,9 @@ class Window(Frame):
                     data_array[5]=np.uint16(0)
                     data_array[6]=np.uint16(0)
                     data_array[7]=np.uint16(0)
-                    data_array[8]=np.uint16(VentricularAmplitudeEntry.get())
+                    data_array[8]=np.uint16(1000*float(VentricularAmplitudeEntry.get()))
                     data_array[9]=np.uint16(0)
-                    data_array[10]=np.uint16(VentricularPulseWidthEntry.get())
+                    data_array[10]=np.uint16(10*float(VentricularPulseWidthEntry.get()))
                     data_array[11]=np.uint16(0)
                     data_array[12]=np.uint16(0)
                     data_array[13]=np.uint16(0)
@@ -254,8 +279,33 @@ class Window(Frame):
 
 
                 def clicked_AAIsend( ):
-
-                    #
+                    if int(LowerRateLimitEntry.get())>175 or int(LowerRateLimitEntry.get())<30:
+                        messagebox.showinfo('Message','Invalid Input for Lower Rate Limit\nMust be within 30-175ppm')
+                        return
+                    if int(UpperRateLimitEntry.get())>175 or int(UpperRateLimitEntry.get())<50:
+                        messagebox.showinfo('Message','Invalid input for Upper Rate Limit\nMust be within 50-175ppm')
+                        return
+                    if float(AtrialAmplitudeEntry.get())>3.2 or float(AtrialAmplitudeEntry.get())<0.5:
+                        messagebox.showinfo('Message','Invalid Input for Atrial Amplitude\nMust be within 0.5-3.2V ') # regulated
+                        return
+                    if float(AtrialPulseWidthEntry)>20 or float(AtrialPulseWidthEntry)<0.1:
+                        messagebox.showinfo('Message','Invalid Input for Ventricular Pulse Width\nMust be within 0.1-1.9ms (20ms max for testing purposes)')
+                        return
+                    if float(AtrialSensitivityEntry.get())>10.0 or float(AtrialSensitivityEntry.get())<1.0:
+                        messagebox.showinfo('Message','Invalid input for Atrial Sensitivity\nMust be within 1.0-10.0mV')
+                        return
+                    if int(ARPEntry.get())>500 or int(ARPEntry.get())<150:
+                        messagebox.showinfo('Message','Invalid Input for ARP\nMust be within 150-500ms')
+                        return
+                    if int(PVARPEntry.get())>500 or int(PVARPEntry.get())<150:
+                        messagebox.showinfo('Message','Invalid Input for PVARP\nMust be within 150-500ms')
+                        return
+                    if int(HysteresisEntry.get())!=int(LowerRateLimitEntry.get()):
+                        messagebox.showinfo('Message','Invalid input for Hysteresis\nMust match Lower Rate Limit')
+                        return
+                    if int(RateSmoothEntry.get())!=0 and int(RateSmoothEntry.get())!=3 and int(RateSmoothEntry.get())!=6 and int(RateSmoothEntry.get())!=9 and int(RateSmoothEntry.get())!=12 and int(RateSmoothEntry.get())!=15 and int(RateSmoothEntry.get())!=18 and int(RateSmoothEntry.get())!=21:
+                        messagebox.showinfo('Message',"Invalid input for Rate Smoothing\n Values include:0, 3, 6, 9, 12, 15, 18, 21")
+                        return
                     #
                     #
                     #
@@ -309,11 +359,11 @@ class Window(Frame):
                     data_array[4]=np.uint16(0)
                     data_array[5]=np.uint16(0)
                     data_array[6]=np.uint16(0)
-                    data_array[7]=np.uint16(AtrialAmplitudeEntry.get())
+                    data_array[7]=np.uint16(1000*float(AtrialAmplitudeEntry.get()))
                     data_array[8]=np.uint16(0)
-                    data_array[9]=np.uint16(AtrialPulseWidthEntry.get())
+                    data_array[9]=np.uint16(10*float(AtrialPulseWidthEntry.get()))
                     data_array[10]=np.uint16(0)
-                    data_array[11]=np.uint16(AtrialSensitivityEntry.get())
+                    data_array[11]=np.uint16(1000*float(AtrialSensitivityEntry.get()))
                     data_array[12]=np.uint16(0)
                     data_array[13]=np.uint16(0)
                     data_array[14]=np.uint16(ARPEntry.get())
@@ -376,6 +426,31 @@ class Window(Frame):
 
                 def clicked_VVIsend( ):
 
+                    if int(LowerRateLimitEntry.get())>175 or int(LowerRateLimitEntry.get())<30:
+                        messagebox.showinfo('Message','Invalid Input for Lower Rate Limit\nMust be within 30-175ppm')
+                        return
+                    if int(UpperRateLimitEntry.get())>175 or int(UpperRateLimitEntry.get())<50:
+                        messagebox.showinfo('Message','Invalid input for Upper Rate Limit\nMust be within 50-175ppm')
+                        return
+                    if float(VentricularAmplitudeEntry.get())>7.0 or float(VentricularAmplitudeEntry.get())<3.5:
+                        messagebox.showinfo('Message','Invalid Input for Ventricular Amplitude\nMust be within 3.5-7.0V')
+                        return
+                    if float(VentricularPulseWidthEntry)>20.0 or float(VentricularPulseWidthEntry)<0.1:
+                        messagebox.showinfo('Message','Invalid Input for Ventricular Pulse Width\nMust be within 0.1-1.9ms (20ms max for testing purposes)')
+                        return
+                    if float(VentricularSensitivityEntry.get())>10.0 or float(VentricularSensitivityEntry.get())<1.0:
+                        messagebox.showinfo('Message','Invalid input for Ventricular Sensitivity\nMust be within 1.0-10.0mV')
+                        return
+                    if int(VRPEntry.get())>500 or int(VRPEntry.get())<150:
+                        messagebox.showinfo('Message','Invalid Input for VRP\nMust be within 150-500ms')
+                        return
+                    if int(HysteresisEntry.get())!=int(LowerRateLimitEntry.get()):
+                        messagebox.showinfo('Message','Invalid input for Hysteresis\nMust match Lower Rate Limit')
+                        return
+                    if int(RateSmoothEntry.get())!=0 and int(RateSmoothEntry.get())!=3 and int(RateSmoothEntry.get())!=6 and int(RateSmoothEntry.get())!=9 and int(RateSmoothEntry.get())!=12 and int(RateSmoothEntry.get())!=15 and int(RateSmoothEntry.get())!=18 and int(RateSmoothEntry.get())!=21:
+                        messagebox.showinfo('Message',"Invalid input for Rate Smoothing\n Values include:0, 3, 6, 9, 12, 15, 18, 21")
+                        return
+
                     f=open(paramfilename,"a")
                     f.write("Pacing mode: VVI \n")
                     f.write("Lower Rate Limit: ")
@@ -421,11 +496,11 @@ class Window(Frame):
                     data_array[5]=np.uint16(0)
                     data_array[6]=np.uint16(0)
                     data_array[7]=np.uint16(0)
-                    data_array[8]=np.uint16(VentricularAmplitudeEntry.get())
+                    data_array[8]=np.uint16(1000*float(VentricularAmplitudeEntry.get()))
                     data_array[9]=np.uint16(0)
-                    data_array[10]=np.uint16(VentricularPulseWidthEntry.get())
+                    data_array[10]=np.uint16(10*float(VentricularPulseWidthEntry.get()))
                     data_array[11]=np.uint16(0)
-                    data_array[12]=np.uint16(VentricularSensitivityEntry.get())
+                    data_array[12]=np.uint16(1000*float(VentricularSensitivityEntry.get()))
                     data_array[13]=np.uint16(VRPEntry.get())
                     data_array[14]=np.uint16(0)
                     data_array[15]=np.uint16(0)
@@ -558,11 +633,11 @@ class Window(Frame):
                     data_array[5]=np.uint16(DynamicAVDelayEntry.get())
                     data_array[6]=np.uint16(0)
                     data_array[7]=np.uint16(0)
-                    data_array[8]=np.uint16(VentricularAmplitudeEntry.get())
+                    data_array[8]=np.uint16(1000*float(VentricularAmplitudeEntry.get()))
                     data_array[9]=np.uint16(0)
-                    data_array[10]=np.uint16(VentricularPulseWidthEntry.get())
+                    data_array[10]=np.uint16(10*float(VentricularPulseWidthEntry.get()))
                     data_array[11]=np.uint16(0)
-                    data_array[12]=np.uint16(VentricularSensitivityEntry.get())
+                    data_array[12]=np.uint16(1000*float(VentricularSensitivityEntry.get()))
                     data_array[13]=np.uint16(VRPEntry.get())
                     data_array[14]=np.uint16(0)
                     data_array[15]=np.uint16(0)
@@ -660,10 +735,10 @@ class Window(Frame):
                     data_array[4]=np.uint16(FixedAVDelayEntry.get())
                     data_array[5]=np.uint16(0)
                     data_array[6]=np.uint16(0)
-                    data_array[7]=np.uint16(AtrialAmplitudeEntry.get())
-                    data_array[8]=np.uint16(VentricularAmplitudeEntry.get())
-                    data_array[9]=np.uint16(AtrialPulseWidthEntry.get())
-                    data_array[10]=np.uint16(VentricularPulseWidthEntry.get())
+                    data_array[7]=np.uint16(1000*float(AtrialAmplitudeEntry.get()))
+                    data_array[8]=np.uint16(1000*float(VentricularAmplitudeEntry.get()))
+                    data_array[9]=np.uint16(10*float(AtrialPulseWidthEntry.get()))
+                    data_array[10]=np.uint16(10*float(VentricularPulseWidthEntry.get()))
                     data_array[11]=np.uint16(0)
                     data_array[12]=np.uint16(0)
                     data_array[13]=np.uint16(0)
@@ -721,7 +796,7 @@ class Window(Frame):
                 AtrialSensitivitylabel= Label(DDIConfigApp, text="Atrial Sensitivity: ")
                 AtrialSensitivitylabel.place(x=10, y=220)
                 AtrialSensitivityEntry=Entry(DDIConfigApp)
-                AtrialSensitivityEntry.place(x=130,y=220)
+                AtrialSensitivityEntry.place(x=150,y=220)
                 FixedAVDelaylabel= Label(DDIConfigApp, text="Fixed AV Delay: ")
                 FixedAVDelaylabel.place(x=10, y=250)
                 FixedAVDelayEntry= Entry(DDIConfigApp)
@@ -733,11 +808,11 @@ class Window(Frame):
                 ARPlabel= Label(DDIConfigApp, text="ARP: ")
                 ARPlabel.place(x=10, y=310)
                 ARPEntry=Entry(DDIConfigApp)
-                ARPEntry.place(x=130,y=310)
+                ARPEntry.place(x=150,y=310)
                 PVARPlabel= Label(DDIConfigApp, text="PVARP: ")
                 PVARPlabel.place(x=10, y=340)
                 PVARPEntry=Entry(DDIConfigApp)
-                PVARPEntry.place(x=130,y=340)
+                PVARPEntry.place(x=150,y=340)
 
                 def clicked_DDIsend( ):
                     #VOO array data
@@ -782,12 +857,12 @@ class Window(Frame):
                     data_array[4]=np.uint16(FixedAVDelayEntry.get())
                     data_array[5]=np.uint16(0)
                     data_array[6]=np.uint16(0)
-                    data_array[7]=np.uint16(AtrialAmplitudeEntry.get())
-                    data_array[8]=np.uint16(VentricularAmplitudeEntry.get())
-                    data_array[9]=np.uint16(AtrialPulseWidthEntry.get())
-                    data_array[10]=np.uint16(VentricularPulseWidthEntry.get())
-                    data_array[11]=np.uint16(AtrialSensitivityEntry.get())
-                    data_array[12]=np.uint16(VentricularSensitivityEntry.get())
+                    data_array[7]=np.uint16(1000*float(AtrialAmplitudeEntry.get()))
+                    data_array[8]=np.uint16(1000*float(VentricularAmplitudeEntry.get()))
+                    data_array[9]=np.uint16(10*float(AtrialPulseWidthEntry.get()))
+                    data_array[10]=np.uint16(10*float(VentricularPulseWidthEntry.get()))
+                    data_array[11]=np.uint16(1000*float(AtrialSensitivityEntry.get()))
+                    data_array[12]=np.uint16(1000*float(VentricularSensitivityEntry.get()))
                     data_array[13]=np.uint16(VRPEntry.get())
                     data_array[14]=np.uint16(ARPEntry.get())
                     data_array[15]=np.uint16(PVARPEntry.get())
@@ -806,7 +881,7 @@ class Window(Frame):
                     print(data_array)
 
                 send=Button(DDIConfigApp,text='Register Parameters',command=clicked_DDIsend)
-                send.place(x=50,y=340)
+                send.place(x=50,y=370)
 
             if p.get()=="DDD":
                 DDDConfigApp=Toplevel(self)
@@ -936,12 +1011,12 @@ class Window(Frame):
                     data_array[4]=np.uint16(FixedAVDelayEntry.get())
                     data_array[5]=np.uint16(DynamicAVDelayEntry.get())
                     data_array[6]=np.uint16(SensedAVDelayEntry.get())
-                    data_array[7]=np.uint16(AtrialAmplitudeEntry.get())
-                    data_array[8]=np.uint16(VentricularAmplitudeEntry.get())
-                    data_array[9]=np.uint16(AtrialPulseWidthEntry.get())
-                    data_array[10]=np.uint16(VentricularPulseWidthEntry.get())
-                    data_array[11]=np.uint16(AtrialSensitivityEntry.get())
-                    data_array[12]=np.uint16(VentricularSensitivityEntry.get())
+                    data_array[7]=np.uint16(1000*float(AtrialAmplitudeEntry.get()))
+                    data_array[8]=np.uint16(1000*float(VentricularAmplitudeEntry.get()))
+                    data_array[9]=np.uint16(10*float(AtrialPulseWidthEntry.get()))
+                    data_array[10]=np.uint16(10*float(VentricularPulseWidthEntry.get()))
+                    data_array[11]=np.uint16(1000*float(AtrialSensitivityEntry.get()))
+                    data_array[12]=np.uint16(1000*float(VentricularSensitivityEntry.get()))
                     data_array[13]=np.uint16(VRPEntry.get())
                     data_array[14]=np.uint16(ARPEntry.get())
                     data_array[15]=np.uint16(PVARPEntry.get())
@@ -1033,9 +1108,9 @@ class Window(Frame):
                     data_array[4]=np.uint16(0)
                     data_array[5]=np.uint16(0)
                     data_array[6]=np.uint16(0)
-                    data_array[7]=np.uint16(AtrialAmplitudeEntry.get())
+                    data_array[7]=np.uint16(1000*float(AtrialAmplitudeEntry.get()))
                     data_array[8]=np.uint16(0)
-                    data_array[9]=np.uint16(AtrialPulseWidthEntry.get())
+                    data_array[9]=np.uint16(10*float(AtrialPulseWidthEntry.get()))
                     data_array[10]=np.uint16(0)
                     data_array[11]=np.uint16(0)
                     data_array[12]=np.uint16(0)
@@ -1177,11 +1252,11 @@ class Window(Frame):
                     data_array[4]=np.uint16(0)
                     data_array[5]=np.uint16(0)
                     data_array[6]=np.uint16(0)
-                    data_array[7]=np.uint16(AtrialAmplitudeEntry.get())
+                    data_array[7]=np.uint16(1000*float(AtrialAmplitudeEntry.get()))
                     data_array[8]=np.uint16(0)
-                    data_array[9]=np.uint16(AtrialPulseWidthEntry.get())
+                    data_array[9]=np.uint16(10*float(AtrialPulseWidthEntry.get()))
                     data_array[10]=np.uint16(0)
-                    data_array[11]=np.uint16(AtrialSensitivityEntry.get())
+                    data_array[11]=np.uint16(1000*float(AtrialSensitivityEntry.get()))
                     data_array[12]=np.uint16(0)
                     data_array[13]=np.uint16(0)
                     data_array[14]=np.uint16(ARPEntry.get())
@@ -1283,9 +1358,9 @@ class Window(Frame):
                     data_array[5]=np.uint16(0)
                     data_array[6]=np.uint16(0)
                     data_array[7]=np.uint16(0)
-                    data_array[8]=np.uint16(VentricularAmplitudeEntry.get())
+                    data_array[8]=np.uint16(1000*float(VentricularAmplitudeEntry.get()))
                     data_array[9]=np.uint16(0)
-                    data_array[10]=np.uint16(VentricularPulseWidthEntry.get())
+                    data_array[10]=np.uint16(10*float(VentricularPulseWidthEntry.get()))
                     data_array[11]=np.uint16(0)
                     data_array[12]=np.uint16(0)
                     data_array[13]=np.uint16(0)
@@ -1413,11 +1488,11 @@ class Window(Frame):
                     data_array[5]=np.uint16(0)
                     data_array[6]=np.uint16(0)
                     data_array[7]=np.uint16(0)
-                    data_array[8]=np.uint16(VentricularAmplitudeEntry.get())
+                    data_array[8]=np.uint16(1000*float(VentricularAmplitudeEntry.get()))
                     data_array[9]=np.uint16(0)
-                    data_array[10]=np.uint16(VentricularPulseWidthEntry.get())
+                    data_array[10]=np.uint16(10*float(VentricularPulseWidthEntry.get()))
                     data_array[11]=np.uint16(0)
-                    data_array[12]=np.uint16(VentricularSensitivityEntry.get())
+                    data_array[12]=np.uint16(1000*float(VentricularSensitivityEntry.get()))
                     data_array[13]=np.uint16(VRPEntry.get())
                     data_array[14]=np.uint16(0)
                     data_array[15]=np.uint16(0)
@@ -1571,11 +1646,11 @@ class Window(Frame):
                     data_array[5]=np.uint16(DynamicAVDelayEntry.get())
                     data_array[6]=np.uint16(0)
                     data_array[7]=np.uint16(0)
-                    data_array[8]=np.uint16(VentricularAmplitudeEntry.get())
+                    data_array[8]=np.uint16(1000*float(VentricularAmplitudeEntry.get()))
                     data_array[9]=np.uint16(0)
-                    data_array[10]=np.uint16(VentricularPulseWidthEntry.get())
+                    data_array[10]=np.uint16(10*float(VentricularPulseWidthEntry.get()))
                     data_array[11]=np.uint16(0)
-                    data_array[12]=np.uint16(VentricularSensitivityEntry.get())
+                    data_array[12]=np.uint16(1000*float(VentricularSensitivityEntry.get()))
                     data_array[13]=np.uint16(VRPEntry.get())
                     data_array[14]=np.uint16(0)
                     data_array[15]=np.uint16(0)
@@ -1691,10 +1766,10 @@ class Window(Frame):
                     data_array[4]=np.uint16(FixedAVDelayEntry.get())
                     data_array[5]=np.uint16(0)
                     data_array[6]=np.uint16(0)
-                    data_array[7]=np.uint16(AtrialAmplitudeEntry.get())
-                    data_array[8]=np.uint16(VentricularAmplitudeEntry.get())
-                    data_array[9]=np.uint16(AtrialPulseWidthEntry.get())
-                    data_array[10]=np.uint16(VentricularPulseWidthEntry.get())
+                    data_array[7]=np.uint16(1000*float(AtrialAmplitudeEntry.get()))
+                    data_array[8]=np.uint16(1000*float(VentricularAmplitudeEntry.get()))
+                    data_array[9]=np.uint16(10*float(AtrialPulseWidthEntry.get()))
+                    data_array[10]=np.uint16(10*float(VentricularPulseWidthEntry.get()))
                     data_array[11]=np.uint16(0)
                     data_array[12]=np.uint16(0)
                     data_array[13]=np.uint16(0)
@@ -1719,6 +1794,17 @@ class Window(Frame):
 
 
         def clicked_reg( ):
+            f=open(userfilename,"a")
+            f.close()
+            count=0
+            f=open(userfilename,"r")
+            for line in f:
+                if count < 9:
+                    count += 1
+                else:
+                    messagebox.showinfo('Message', 'Maximum number of users reached.')
+                    f.close()
+                    return
             f=open(userfilename,"a")
 
             f.write(self.Username.get())
