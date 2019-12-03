@@ -5,6 +5,7 @@ import numpy as np
 import serial
 import serial.tools.list_ports as port_list
 import os
+import struct
 
 
 dirname = os.path.dirname(__file__)
@@ -84,7 +85,7 @@ class Window(Frame):
                     if (float(AtrialAmplitudeEntry.get()))>3.2 or (float(AtrialAmplitudeEntry.get()))<0.5:
                         messagebox.showinfo('Message','Invalid Input for Atrial Amplitude\nMust be within 0.5-3.2V ') # regulated
                         return
-                    if float(AtrialPulseWidthEntry)>20.0 or float(AtrialPulseWidthEntry)<0.1:
+                    if float(AtrialPulseWidthEntry.get())>20.0 or float(AtrialPulseWidthEntry.get())<0.1:
                         messagebox.showinfo('Message','Invalid Input for Ventricular Pulse Width\nMust be within 0.1-1.9ms (20ms max for testing purposes)')
                         return
 
@@ -108,7 +109,7 @@ class Window(Frame):
                     f.write("\n")
 
                     f.close()
-
+                    print(struct.pack('>H',np.uint16(LowerRateLimitEntry.get())))
                     data_array = np.arange(27)
                     data_array[0]=np.uint16(16)
                     data_array[1]=np.uint8(0)
@@ -294,7 +295,7 @@ class Window(Frame):
                     if float(AtrialAmplitudeEntry.get())>3.2 or float(AtrialAmplitudeEntry.get())<0.5:
                         messagebox.showinfo('Message','Invalid Input for Atrial Amplitude\nMust be within 0.5-3.2V ') # regulated
                         return
-                    if float(AtrialPulseWidthEntry)>20 or float(AtrialPulseWidthEntry)<0.1:
+                    if float(AtrialPulseWidthEntry.get())>20 or float(AtrialPulseWidthEntry.get())<0.1:
                         messagebox.showinfo('Message','Invalid Input for Ventricular Pulse Width\nMust be within 0.1-1.9ms (20ms max for testing purposes)')
                         return
                     if float(AtrialSensitivityEntry.get())>10.0 or float(AtrialSensitivityEntry.get())<1.0:
@@ -756,7 +757,7 @@ class Window(Frame):
                     if (float(AtrialAmplitudeEntry.get()))>3.2 or (float(AtrialAmplitudeEntry.get()))<0.5:
                         messagebox.showinfo('Message','Invalid Input for Atrial Amplitude\nMust be within 0.5-3.2V ') # regulated
                         return
-                    if float(AtrialPulseWidthEntry)>20.0 or float(AtrialPulseWidthEntry)<0.1:
+                    if float(AtrialPulseWidthEntry.get())>20.0 or float(AtrialPulseWidthEntry.get())<0.1:
                         messagebox.showinfo('Message','Invalid Input for Ventricular Pulse Width\nMust be within 0.1-1.9ms (20ms max for testing purposes)')
                         return
                     if float(VentricularAmplitudeEntry.get())>7.0 or float(VentricularAmplitudeEntry.get())<3.5:
@@ -905,7 +906,7 @@ class Window(Frame):
                     if (float(VentricularAmplitudeEntry.get()))>7.0 or (float(VentricularAmplitudeEntry.get()))<3.5:
                         messagebox.showinfo('Message','Invalid Input for Ventricular Amplitude\nMust be within 3.5-7.0V')
                         return
-                    if float(AtrialPulseWidthEntry)>20.0 or float(AtrialPulseWidthEntry)<0.1:
+                    if float(AtrialPulseWidthEntry.get())>20.0 or float(AtrialPulseWidthEntry.get())<0.1:
                             messagebox.showinfo('Message','Invalid Input for Ventricular Pulse Width\nMust be within 0.1-1.9ms (20ms max for testing purposes)')
                             return
                     if float(VentricularPulseWidthEntry.get())>20.0 or float(VentricularPulseWidthEntry.get())<0.1:
@@ -1102,7 +1103,7 @@ class Window(Frame):
                     if (float(VentricularAmplitudeEntry.get()))>7.0 or (float(VentricularAmplitudeEntry.get()))<3.5:
                         messagebox.showinfo('Message','Invalid Input for Ventricular Amplitude\nMust be within 3.5-7.0V')
                         return
-                    if float(AtrialPulseWidthEntry)>20.0 or float(AtrialPulseWidthEntry)<0.1:
+                    if float(AtrialPulseWidthEntry.get())>20.0 or float(AtrialPulseWidthEntry.get())<0.1:
                             messagebox.showinfo('Message','Invalid Input for Ventricular Pulse Width\nMust be within 0.1-1.9ms (20ms max for testing purposes)')
                             return
                     if float(VentricularPulseWidthEntry.get())>20.0 or float(VentricularPulseWidthEntry.get())<0.1:
@@ -1271,7 +1272,7 @@ class Window(Frame):
                     if (float(AtrialAmplitudeEntry.get()))>3.2 or (float(AtrialAmplitudeEntry.get()))<0.5:
                         messagebox.showinfo('Message','Invalid Input for Atrial Amplitude\nMust be within 0.5-3.2V ') # regulated
                         return
-                    if float(AtrialPulseWidthEntry)>20.0 or float(AtrialPulseWidthEntry)<0.1:
+                    if float(AtrialPulseWidthEntry.get())>20.0 or float(AtrialPulseWidthEntry.get())<0.1:
                         messagebox.showinfo('Message','Invalid Input for Ventricular Pulse Width\nMust be within 0.1-1.9ms (20ms max for testing purposes)')
                         return
                     if int(ReactionTimeEntry.get())<10 or int(ReactionTimeEntry.get())>50:
@@ -1417,7 +1418,7 @@ class Window(Frame):
                     if float(AtrialAmplitudeEntry.get())>3.2 or float(AtrialAmplitudeEntry.get())<0.5:
                         messagebox.showinfo('Message','Invalid Input for Atrial Amplitude\nMust be within 0.5-3.2V ') # regulated
                         return
-                    if float(AtrialPulseWidthEntry)>20 or float(AtrialPulseWidthEntry)<0.1:
+                    if float(AtrialPulseWidthEntry.get())>20 or float(AtrialPulseWidthEntry.get())<0.1:
                         messagebox.showinfo('Message','Invalid Input for Ventricular Pulse Width\nMust be within 0.1-1.9ms (20ms max for testing purposes)')
                         return
                     if float(AtrialSensitivityEntry.get())>10.0 or float(AtrialSensitivityEntry.get())<1.0:
@@ -2084,7 +2085,7 @@ class Window(Frame):
                 def clicked_DOORsend( ):
                     if int(UpperRateLimitEntry.get())<int(LowerRateLimitEntry.get()):
                         messagebox.showinfo('Message', 'Invalid input, Upper Rate limit must be greater than Lower Rate limit')
-                        return                    
+                        return
                     if int(ReactionTimeEntry.get())<10 or int(ReactionTimeEntry.get())>50:
                         messagebox.showinfo('Message','Invalid Input for Reaction Time \nMust be within 10-50 seconds')
                         return
@@ -2106,7 +2107,7 @@ class Window(Frame):
                     if (float(AtrialAmplitudeEntry.get()))>3.2 or (float(AtrialAmplitudeEntry.get()))<0.5:
                         messagebox.showinfo('Message','Invalid Input for Atrial Amplitude\nMust be within 0.5-3.2V ') # regulated
                         return
-                    if float(AtrialPulseWidthEntry)>20.0 or float(AtrialPulseWidthEntry)<0.1:
+                    if float(AtrialPulseWidthEntry.get())>20.0 or float(AtrialPulseWidthEntry.get())<0.1:
                         messagebox.showinfo('Message','Invalid Input for Ventricular Pulse Width\nMust be within 0.1-1.9ms (20ms max for testing purposes)')
                         return
                     if float(VentricularAmplitudeEntry.get())>7.0 or float(VentricularAmplitudeEntry.get())<3.5:
