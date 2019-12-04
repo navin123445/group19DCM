@@ -138,7 +138,6 @@ class Window(Frame):
                     data_array[24]=np.uint16(0)
                     data_array[25]=np.uint16(0)
                     data_array[26]=np.uint16(0)
-                    print(type(AtrialAmplitudeEntry.get()))
                     print(data_array)
 
                 send=Button(AOOConfigApp,text='Register Parameters',command=clicked_AOOsend)
@@ -389,8 +388,37 @@ class Window(Frame):
                     data_array[24]=np.uint16(0)
                     data_array[25]=np.uint16(0)
                     data_array[26]=np.uint16(0)
+                    """
+                    byte_array=struct.pack('>H', 16)
+                    byte_array+=struct.pack('>H',1)
+                    byte_array+=struct.pack('>H',np.uint16(LowerRateLimitEntry.get()))
+                    byte_array+=struct.pack('>H',np.uint16(UpperRateLimitEntry.get()))
+                    byte_array+=struct.pack('>H',0)
+                    byte_array+=struct.pack('>H',0)
+                    byte_array+=struct.pack('>H',0)
+                    byte_array+=struct.pack('>H',0)
+                    byte_array+=struct.pack('>H', np.uint16(1000*float(AtrialAmplitudeEntry.get())))
+                    byte_array+=struct.pack('>H',0)
+                    byte_array+=struct.pack('>H', np.uint16(10*float(AtrialPulseWidthEntry.get())))
+                    byte_array+=struct.pack('>H',0)
+                    byte_array+=struct.pack('>H', np.uint16(1000*float(AtrialSensitivityEntry.get())))
+                    byte_array+=struct.pack('>H',0)
+                    byte_array+=struct.pack('>H',0)
+                    byte_array+=struct.pack('>H', np.uint16(ARPEntry.get()))
+                    byte_array+=struct.pack('>H', np.uint16(PVARPEntry.get()))
+                    byte_array+=struct.pack('>H',0)
+                    byte_array+=struct.pack('>H', np.uint16(HysteresisEntry.get()))
+                    byte_array+=struct.pack('>H', np.uint16(RateSmoothEntry.get()))
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
 
-                    #data_array[]=np.uint16()
+                    print(byte_array)
+                    """
                     print(data_array)
 
 
@@ -1211,6 +1239,9 @@ class Window(Frame):
                     data_array[24]=np.uint16(0)
                     data_array[25]=np.uint16(0)
                     data_array[26]=np.uint16(0)
+
+                    byte
+
 
                     #data_array[]=np.uint16()
                     print(data_array)
@@ -2180,7 +2211,7 @@ class Window(Frame):
 
                 send=Button(DOORConfigApp,text='Register Parameters',command=clicked_DOORsend)
                 send.place(x=50,y=400)
-        #def bytearray():
+
 
 
         def clicked_reg( ):
