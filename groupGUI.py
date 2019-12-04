@@ -109,7 +109,9 @@ class Window(Frame):
                     f.write("\n")
 
                     f.close()
-                    print(struct.pack('>H',np.uint16(LowerRateLimitEntry.get())))
+                    stemp=struct.pack('>H',np.uint16(LowerRateLimitEntry.get()))
+                    print(stemp)
+                    print(struct.unpack('>H', stemp))
                     data_array = np.arange(27)
                     data_array[0]=np.uint16(16)
                     data_array[1]=np.uint8(0)
@@ -138,7 +140,39 @@ class Window(Frame):
                     data_array[24]=np.uint16(0)
                     data_array[25]=np.uint16(0)
                     data_array[26]=np.uint16(0)
+
                     print(data_array)
+
+                    byte_array=struct.pack('>H', 16)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H',np.uint16(LowerRateLimitEntry.get()))
+                    byte_array+=struct.pack('>H',np.uint16(UpperRateLimitEntry.get()))
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', np.uint16(1000*float(AtrialAmplitudeEntry.get())))
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', np.uint16(10*float(AtrialPulseWidthEntry.get())))
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('>H', 0)
+
+                    print(byte_array)
+
 
                 send=Button(AOOConfigApp,text='Register Parameters',command=clicked_AOOsend)
                 send.place(x=50,y=130)
@@ -1551,7 +1585,6 @@ class Window(Frame):
 
 
 
-                    #data_array[]=np.uint16()
                     print(data_array)
 
 
