@@ -6,12 +6,12 @@ import serial
 import serial.tools.list_ports as port_list
 import os
 import struct
-
+import time
 
 dirname = os.path.dirname(__file__)
 userfilename = os.path.join(dirname, 'login_info.txt')
 paramfilename = os.path.join(dirname, 'user_param_data.txt')
-#ser = serial.Serial('COM5',115200,serial.EIGHTBITS,serial.PARITY_NONE,serial.STOPBITS_ONE)
+ser = serial.Serial('COM5',115200)
 
 #implement other dropdown menu modes
 #start indexing modes at AOO=0 then ascend by one to DOOR
@@ -144,7 +144,8 @@ class Window(Frame):
                     print(data_array)
 
                     byte_array=struct.pack('>H', 16)
-                    byte_array+=struct.pack('>H', 0)
+                    
+                    byte_array+=struct.pack('>H', 15)
                     byte_array+=struct.pack('>H',np.uint16(LowerRateLimitEntry.get()))
                     byte_array+=struct.pack('>H',np.uint16(UpperRateLimitEntry.get()))
                     byte_array+=struct.pack('>H', 0)
@@ -170,9 +171,12 @@ class Window(Frame):
                     byte_array+=struct.pack('>H', 0)
                     byte_array+=struct.pack('>H', 0)
                     byte_array+=struct.pack('>H', 0)
-
+                    
+                    for k in range(2):
+                        ser.write(byte_array)
                     print(byte_array)
-
+                    time.sleep(2)
+                    print(ser.read(1))
 
                 send=Button(AOOConfigApp,text='Register Parameters',command=clicked_AOOsend)
                 send.place(x=50,y=130)

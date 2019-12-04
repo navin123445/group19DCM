@@ -1,0 +1,107 @@
+
+Pacemaker Configuration for User: k
+
+Pacemaker Configuration for User: k
+Pacing mode: AOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Atrial Amplitude: 3
+Atrial Pulse Width: 10
+
+Pacemaker Configuration for User: k
+Pacing mode: AOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Atrial Amplitude: 3
+Atrial Pulse Width: 10
+
+Pacemaker Configuration for User: k
+Pacing mode: AOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Atrial Amplitude: 3
+Atrial Pulse Width: 10
+Pacing mode: AOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Atrial Amplitude: 3
+Atrial Pulse Width: 10
+Pacing mode: AOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Atrial Amplitude: 3
+Atrial Pulse Width: 10
+Pacing mode: AOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Atrial Amplitude: 3
+Atrial Pulse Width: 10
+Pacing mode: AOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Atrial Amplitude: 3
+Atrial Pulse Width: 10
+Pacing mode: AOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Atrial Amplitude: 3
+Atrial Pulse Width: 10
+
+Pacemaker Configuration for User: k
+Pacing mode: AOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Atrial Amplitude: 3
+Atrial Pulse Width: 10
+
+Pacemaker Configuration for User: k
+Pacing mode: AOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Atrial Amplitude: 3
+Atrial Pulse Width: 10
+
+Pacemaker Configuration for User: k
+Pacing mode: AOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 140
+Atrial Amplitude: 3
+Atrial Pulse Width: 10
+
+Pacemaker Configuration for User: k
+Pacing mode: AOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Atrial Amplitude: 3
+Atrial Pulse Width: 10
+
+Pacemaker Configuration for User: k
+Pacing mode: AOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Atrial Amplitude: 3
+Atrial Pulse Width: 10
+Pacing mode: AOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Atrial Amplitude: 3
+Atrial Pulse Width: 10
+
+Pacemaker Configuration for User: k
+Pacing mode: AOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 150
+Atrial Amplitude: 3
+Atrial Pulse Width: 10
+
+Pacemaker Configuration for User: k
+Pacing mode: AOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 150
+Atrial Amplitude: 3
+Atrial Pulse Width: 10
+Pacing mode: AOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 150
+Atrial Amplitude: 3
+Atrial Pulse Width: 10
