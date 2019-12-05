@@ -105,3 +105,1137 @@ Lower Rate Limit: 120
 Upper Rate Limit: 150
 Atrial Amplitude: 3
 Atrial Pulse Width: 10
+
+Pacemaker Configuration for User: k
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 30
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+
+Pacemaker Configuration for User: k
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 30
+Upper Rate Limit[ppm]: 130
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 30
+Upper Rate Limit[ppm]: 130
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 30
+Upper Rate Limit[ppm]: 130
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+
+Pacemaker Configuration for User: k
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: VOO 
+Lower Rate Limit: 30
+Upper Rate Limit: 100
+Ventricular Amplitude: 5
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 30
+Upper Rate Limit: 100
+Ventricular Amplitude: 5
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 30
+Upper Rate Limit: 100
+Ventricular Amplitude: 5
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 30
+Upper Rate Limit: 100
+Ventricular Amplitude: 5
+Ventricular Pulse Width: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 50
+Upper Rate Limit[ppm]: 100
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+
+Pacemaker Configuration for User: k
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 100
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 100
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 100
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 100
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 140
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 140
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 140
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 140
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 140
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 140
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 10
+
+Pacemaker Configuration for User: k
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+
+Pacemaker Configuration for User: k
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+
+Pacemaker Configuration for User: k
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 120
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3.5
+Ventricular Pulse Width: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+
+Pacemaker Configuration for User: k
+
+Pacemaker Configuration for User: k
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 20Atrial Amplitude: 3
+Atrial Pulse Width: 20Fixed Delay: 
+Pacemaker Configuration for User: k
+
+Pacemaker Configuration for User: k
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 20Atrial Amplitude: 3
+Atrial Pulse Width: 20Fixed Delay: 300
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+
+Pacemaker Configuration for User: k
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 20Atrial Amplitude: 3
+Atrial Pulse Width: 20Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 20Atrial Amplitude: 3
+Atrial Pulse Width: 20Fixed Delay: 300
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+
+Pacemaker Configuration for User: k
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+
+Pacemaker Configuration for User: k
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 120
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 120
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 120
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 120
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 120
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+
+Pacemaker Configuration for User: k
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 15
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 15
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+
+Pacemaker Configuration for User: k
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 120
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 120
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 120
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 120
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+
+Pacemaker Configuration for User: k
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 120
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 120
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+
+Pacemaker Configuration for User: k
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 20
+
+Pacemaker Configuration for User: k
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 70
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 70
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 70
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 70
+
+Pacemaker Configuration for User: k
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 70
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 20
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 120
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 160
+Upper Rate Limit: 160
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 160
+Upper Rate Limit: 160
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 160
+Upper Rate Limit: 160
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 160
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 160
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+
+Pacemaker Configuration for User: k
+
+Pacemaker Configuration for User: k
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 60
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 120
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: AOO 
+Lower Rate Limit[ppm]: 120
+Upper Rate Limit[ppm]: 120
+Atrial Amplitude[V]: 3
+Atrial Pulse Width[ms]: 10
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 300
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 4
+Ventricular Pulse Width: 10Atrial Amplitude: 4
+Atrial Pulse Width: 10Fixed Delay: 150
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 4
+Ventricular Pulse Width: 10Atrial Amplitude: 4
+Atrial Pulse Width: 10Fixed Delay: 150
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 4
+Ventricular Pulse Width: 10Atrial Amplitude: 4
+Atrial Pulse Width: 10Fixed Delay: 150
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 4
+Ventricular Pulse Width: 10Atrial Amplitude: 4
+Atrial Pulse Width: 10Fixed Delay: 150
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 4
+Ventricular Pulse Width: 10Atrial Amplitude: 4
+Atrial Pulse Width: 10Fixed Delay: 150
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10Atrial Amplitude: 3
+Atrial Pulse Width: 10Fixed Delay: 150
+
+Pacemaker Configuration for User: k
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 4
+Ventricular Pulse Width: 10Atrial Amplitude: 4
+Atrial Pulse Width: 10Fixed Delay: 150
+Pacing mode: VOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 3
+Ventricular Pulse Width: 10
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 4
+Ventricular Pulse Width: 10Atrial Amplitude: 4
+Atrial Pulse Width: 10Fixed Delay: 150
+Pacing mode: DOO 
+Lower Rate Limit: 60
+Upper Rate Limit: 120
+Ventricular Amplitude: 4
+Ventricular Pulse Width: 10Atrial Amplitude: 4
+Atrial Pulse Width: 10Fixed Delay: 150

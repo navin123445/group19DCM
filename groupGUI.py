@@ -107,9 +107,9 @@ class Window(Frame):
                     f.write("\n")
 
                     f.close()
-                    #stemp=struct.pack('>H',np.uint16(LowerRateLimitEntry.get()))
+                    #stemp=struct.pack('<H',np.uint16(LowerRateLimitEntry.get()))
                     #print(stemp)
-                    #print(struct.unpack('>H', stemp))
+                    #print(struct.unpack('<H', stemp))
                     data_array = np.arange(27)
                     data_array[0]=np.uint16(16)
                     data_array[1]=np.uint8(0)
@@ -141,39 +141,39 @@ class Window(Frame):
 
                     print(data_array)
 
-                    byte_array=struct.pack('>H', 16)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H',np.uint16(LowerRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(UpperRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', np.uint16(1000*float(AtrialAmplitudeEntry.get())))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', np.uint16(10*float(AtrialPulseWidthEntry.get())))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
+                    byte_array=struct.pack('<H', 16)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H',np.uint16(LowerRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(UpperRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(1000*float(AtrialAmplitudeEntry.get())))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(10*float(AtrialPulseWidthEntry.get())))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
 
-                    for k in range(2):
-                        ser.write(byte_array)
+
+                    ser.write(byte_array)
                     print(byte_array)
                     time.sleep(2)
-                    print(ser.read(1))
+                    #print(ser.read(1))
 
                 send=Button(AOOConfigApp,text='Register Parameters',command=clicked_AOOsend)
                 send.place(x=50,y=130)
@@ -206,7 +206,7 @@ class Window(Frame):
                     if int(UpperRateLimitEntry.get())>175 or int(UpperRateLimitEntry.get())<50:
                         messagebox.showinfo('Message','Invalid input for Upper Rate Limit\nMust be within 50-175ppm')
                         return
-                    if float(VentricularAmplitudeEntry.get())>7.0 or float(VentricularAmplitudeEntry.get())<3.5:
+                    if float(VentricularAmplitudeEntry.get())>7.0 or float(VentricularAmplitudeEntry.get())<0.5:
                         messagebox.showinfo('Message','Invalid Input for Ventricular Amplitude\nMust be within 3.5-7.0V')
                         return
                     if float(VentricularPulseWidthEntry.get())>20.0 or float(VentricularPulseWidthEntry.get())<0.1:
@@ -270,40 +270,40 @@ class Window(Frame):
 
                     print(data_array)
 
-                    byte_array=struct.pack('>H', 16)
+                    byte_array=struct.pack('<H', 16)
 
-                    byte_array+=struct.pack('>H', 2)
-                    byte_array+=struct.pack('>H',np.uint16(LowerRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(UpperRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', np.uint16(1000*float(VentricularAmplitudeEntry.get())))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', np.uint16(10*float(VentricularPulseWidthEntry.get())))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
+                    byte_array+=struct.pack('<H', 2)
+                    byte_array+=struct.pack('<H',np.uint16(LowerRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(UpperRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(1000*float(VentricularAmplitudeEntry.get())))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(10*float(VentricularPulseWidthEntry.get())))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
 
-                    for k in range(2):
-                        ser.write(byte_array)
+                    
+                    ser.write(byte_array)
                     print(byte_array)
                     time.sleep(2)
-                    print(ser.read(1))
+                    #print(ser.read(1))
 
                 send=Button(VOOConfigApp,text='Register Parameters',command=clicked_VOOsend)
                 send.place(x=50,y=130)
@@ -460,41 +460,42 @@ class Window(Frame):
 
                     print(data_array)
 
-                    byte_array=struct.pack('>H', 16)
-                    byte_array+=struct.pack('>H',1)
-                    byte_array+=struct.pack('>H',np.uint16(LowerRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(UpperRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H', np.uint16(1000*float(AtrialAmplitudeEntry.get())))
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H', np.uint16(10*float(AtrialPulseWidthEntry.get())))
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H', np.uint16(1000*float(AtrialSensitivityEntry.get())))
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H', np.uint16(ARPEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(PVARPEntry.get()))
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H', np.uint16(HysteresisEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(RateSmoothEntry.get()))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
+                    byte_array=struct.pack('<H', 16)
+                    byte_array+=struct.pack('<H',1)
+                    byte_array+=struct.pack('<H',np.uint16(LowerRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(UpperRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H', np.uint16(1000*float(AtrialAmplitudeEntry.get())))
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H', np.uint16(10*float(AtrialPulseWidthEntry.get())))
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H', np.uint16(1000*float(AtrialSensitivityEntry.get())))
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H', np.uint16(ARPEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(PVARPEntry.get()))
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H', np.uint16(HysteresisEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(RateSmoothEntry.get()))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
 
 
 
-                    for k in range(2):
-                        ser.write(byte_array)
+                    #for k in range(2):
+                    
+                    ser.write(byte_array)
                     print(byte_array)
                     time.sleep(2)
-                    print(ser.read(1))
+                    ##print(ser.read(1))
 
 
 
@@ -549,7 +550,7 @@ class Window(Frame):
                     if int(UpperRateLimitEntry.get())>175 or int(UpperRateLimitEntry.get())<50:
                         messagebox.showinfo('Message','Invalid input for Upper Rate Limit\nMust be within 50-175ppm')
                         return
-                    if float(VentricularAmplitudeEntry.get())>7.0 or float(VentricularAmplitudeEntry.get())<3.5:
+                    if float(VentricularAmplitudeEntry.get())>7.0 or float(VentricularAmplitudeEntry.get())<0.5:
                         messagebox.showinfo('Message','Invalid Input for Ventricular Amplitude\nMust be within 3.5-7.0V')
                         return
                     if float(VentricularPulseWidthEntry)>20.0 or float(VentricularPulseWidthEntry)<0.1:
@@ -636,42 +637,42 @@ class Window(Frame):
                     print(data_array)
 
 
-                    byte_array=struct.pack('>H', 16)
-                    byte_array+=struct.pack('>H',3)
-                    byte_array+=struct.pack('>H',np.uint16(LowerRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(UpperRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', np.uint16(1000*float(VentricularAmplitudeEntry.get())))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H',np.uint16(10*float(VentricularPulseWidthEntry.get())))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H',1000*float(VentricularSensitivityEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(VRPEntry.get()))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H', np.uint16(HysteresisEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(RateSmoothEntry.get()))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
+                    byte_array=struct.pack('<H', 16)
+                    byte_array+=struct.pack('<H',3)
+                    byte_array+=struct.pack('<H',np.uint16(LowerRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(UpperRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(1000*float(VentricularAmplitudeEntry.get())))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H',np.uint16(10*float(VentricularPulseWidthEntry.get())))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H',1000*float(VentricularSensitivityEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(VRPEntry.get()))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H', np.uint16(HysteresisEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(RateSmoothEntry.get()))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
 
 
 
 
-                    for k in range(2):
-                        ser.write(byte_array)
+                    #for k in range(2):
+                    ser.write(byte_array)
                     print(byte_array)
                     time.sleep(2)
-                    print(ser.read(1))
+                    #print(ser.read(1))
 
 
                 send=Button(VVIConfigApp,text='Register Parameters',command=clicked_VVIsend)
@@ -741,7 +742,7 @@ class Window(Frame):
                     if int(UpperRateLimitEntry.get())>175 or int(UpperRateLimitEntry.get())<50:
                         messagebox.showinfo('Message','Invalid input for Upper Rate Limit\nMust be within 50-175ppm')
                         return
-                    if float(VentricularAmplitudeEntry.get())>7.0 or float(VentricularAmplitudeEntry.get())<3.5:
+                    if float(VentricularAmplitudeEntry.get())>7.0 or float(VentricularAmplitudeEntry.get())<0.5:
                         messagebox.showinfo('Message','Invalid Input for Ventricular Amplitude\nMust be within 3.5-7.0V')
                         return
                     if float(VentricularPulseWidthEntry)>20.0 or float(VentricularPulseWidthEntry)<0.1:
@@ -765,10 +766,10 @@ class Window(Frame):
                     if int(PVARPExtensionEntry.get())>400 or int(PVARPExtensionEntry.get())<50:
                             messagebox.showinfo('Message','Invalid Input for PVARP Extension\nMust be Off or within 50-400ms')
                             return
-                    if int(FixedAVDelayEntry.get)>300 or int(UpperRateLimitEntry.get())<70:
+                    if int(FixedAVDelayEntry.get())>300 or int(UpperRateLimitEntry.get())<70:
                         messagebox.showinfo('Message','Invalid input for Fixed AV Delay\nMust be within 70-300ms')
                         return
-                    if int(DynamicAVDelayEntry.get)!=0 or int(DynamicAVDelayEntry.get)!=1: # should we do min dynamic av delay with 30-100?
+                    if int(DynamicAVDelayEntry.get())!=0 or int(DynamicAVDelayEntry.get())!=1: # should we do min dynamic av delay with 30-100?
                         messagebox.showinfo('Message','Invalid Input for Dynamic AV Delay\nMust be 0 or 1')
                         return
                     if int(UpperRateLimitEntry.get())<int(LowerRateLimitEntry.get()):
@@ -849,33 +850,33 @@ class Window(Frame):
 
                     print(data_array)
 
-                    byte_array=struct.pack('>H', 16)
-                    byte_array+=struct.pack('>H',4)
-                    byte_array+=struct.pack('>H',np.uint16(LowerRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(UpperRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H',np.uint16(FixedAVDelayEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(DynamicAVDelayEntry.get()))
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', np.uint16(1000*float(VentricularAmplitudeEntry.get())))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H',np.uint16(10*float(VentricularPulseWidthEntry.get())))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H',1000*float(VentricularSensitivityEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(VRPEntry.get()))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H',np.uint16(PVARPExtension.get()))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', np.uint16(RateSmoothEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(ATRDurationEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(ATRFallbackMEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(ATRFallbackTEntry.get()))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
+                    byte_array=struct.pack('<H', 16)
+                    byte_array+=struct.pack('<H',4)
+                    byte_array+=struct.pack('<H',np.uint16(LowerRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(UpperRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H',np.uint16(FixedAVDelayEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(DynamicAVDelayEntry.get()))
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(1000*float(VentricularAmplitudeEntry.get())))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H',np.uint16(10*float(VentricularPulseWidthEntry.get())))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H',1000*float(VentricularSensitivityEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(VRPEntry.get()))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H',np.uint16(PVARPExtension.get()))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(RateSmoothEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(ATRDurationEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(ATRFallbackMEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(ATRFallbackTEntry.get()))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
 
 
 
@@ -884,7 +885,7 @@ class Window(Frame):
                         ser.write(byte_array)
                     print(byte_array)
                     time.sleep(2)
-                    print(ser.read(1))
+                    #print(ser.read(1))
 
 
                 send=Button(VDDConfigApp,text='Register Parameters',command=clicked_VDDsend)
@@ -899,6 +900,7 @@ class Window(Frame):
                 LowerRateLimitlabel.place(x=10, y=10)
                 LowerRateLimitEntry=Entry(DOOConfigApp)
                 LowerRateLimitEntry.place(x=200,y=10)
+                
                 UpperRateLimitlabel= Label(DOOConfigApp, text="Upper Rate Limit[ppm]: ")
                 UpperRateLimitlabel.place(x=10, y=40)
                 UpperRateLimitEntry=Entry(DOOConfigApp)
@@ -919,6 +921,10 @@ class Window(Frame):
                 AtrialPulseWidthlabel.place(x=10, y=160)
                 AtrialPulseWidthEntry=Entry(DOOConfigApp)
                 AtrialPulseWidthEntry.place(x=200,y=160)
+                FixedAVDelaylabel= Label(DOOConfigApp, text="Fixed AV Delay[ms]: ")
+                FixedAVDelaylabel.place(x=10, y=190)
+                FixedAVDelayEntry= Entry(DOOConfigApp)
+                FixedAVDelayEntry.place(x=200,y=190)
 
 
                 def clicked_DOOsend( ):
@@ -937,11 +943,14 @@ class Window(Frame):
                     if float(AtrialPulseWidthEntry.get())>20.0 or float(AtrialPulseWidthEntry.get())<0.1:
                         messagebox.showinfo('Message','Invalid Input for Atrial Pulse Width\nMust be within 0.1-1.9ms (20ms max for testing purposes)')
                         return
-                    if float(VentricularAmplitudeEntry.get())>7.0 or float(VentricularAmplitudeEntry.get())<3.5:
+                    if float(VentricularAmplitudeEntry.get())>7.0 or float(VentricularAmplitudeEntry.get())<0.5:
                         messagebox.showinfo('Message','Invalid Input for Ventricular Amplitude\nMust be within 3.5-7.0V')
                         return
                     if float(VentricularPulseWidthEntry.get())>20.0 or float(VentricularPulseWidthEntry.get())<0.1:
                         messagebox.showinfo('Message','Invalid Input for Ventricular Pulse Width\nMust be within 0.1-1.9ms(20ms max for testing purposes)')
+                        return
+                    if int(FixedAVDelayEntry.get())>300 or int(FixedAVDelayEntry.get())<70:
+                        messagebox.showinfo('Message','Invalid input for Fixed AV Delay\nMust be within 70-300ms')
                         return
 
 
@@ -1007,42 +1016,42 @@ class Window(Frame):
 
                     print(data_array)
 
-                    byte_array=struct.pack('>H', 16)
-                    byte_array+=struct.pack('>H', 5)
-                    byte_array+=struct.pack('>H',np.uint16(LowerRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(UpperRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', np.uint16(1000*float(AtrialAmplitudeEntry.get())))
-                    byte_array+=struct.pack('>H', np.uint16(1000*float(VentricularAmplitudeEntry.get())))
-                    byte_array+=struct.pack('>H', np.uint16(10*float(AtrialPulseWidthEntry.get())))
-                    byte_array+=struct.pack('>H', np.uint16(10*float(VentricularPulseWidthEntry.get())))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
+                    byte_array=struct.pack('<H', 16)
+                    byte_array+=struct.pack('<H', 5)
+                    byte_array+=struct.pack('<H',np.uint16(LowerRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(UpperRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(FixedAVDelayEntry.get()))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(1000*float(AtrialAmplitudeEntry.get())))
+                    byte_array+=struct.pack('<H', np.uint16(1000*float(VentricularAmplitudeEntry.get())))
+                    byte_array+=struct.pack('<H', np.uint16(10*float(AtrialPulseWidthEntry.get())))
+                    byte_array+=struct.pack('<H', np.uint16(10*float(VentricularPulseWidthEntry.get())))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
 
                     for k in range(2):
                         ser.write(byte_array)
                     print(byte_array)
                     time.sleep(2)
-                    print(ser.read(1))
+                    #print(ser.read(1))
 
                 send=Button(DOOConfigApp,text='Register Parameters',command=clicked_DOOsend)
-                send.place(x=50,y=210)
+                send.place(x=50,y=220)
 
             if p.get()=="DDI":
                 DDIConfigApp=Toplevel(self)
@@ -1107,7 +1116,7 @@ class Window(Frame):
                     if int(UpperRateLimitEntry.get())>175 or int(UpperRateLimitEntry.get())<50:
                         messagebox.showinfo('Message','Invalid input for Upper Rate Limit\nMust be within 50-175ppm')
                         return
-                    if int(FixedAVDelayEntry.get)>300 or int(UpperRateLimitEntry.get())<70:
+                    if int(FixedAVDelayEntry.get())>300 or int(FixedAVDelayEntry.get())<70:
                         messagebox.showinfo('Message','Invalid input for Fixed AV Delay\nMust be within 70-300ms')
                         return
                     if (float(AtrialAmplitudeEntry.get()))>6.2 or (float(AtrialAmplitudeEntry.get()))<0.5:
@@ -1200,33 +1209,33 @@ class Window(Frame):
 
                     print(data_array)
 
-                    byte_array=struct.pack('>H', 16)
-                    byte_array+=struct.pack('>H',6)
-                    byte_array+=struct.pack('>H',np.uint16(LowerRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(UpperRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H',np.uint16(FixedAVDelayEntry.get()))
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H', np.uint16(1000*float(AtrialAmplitudeEntry.get())))
-                    byte_array+=struct.pack('>H', np.uint16(1000*float(VentricularAmplitudeEntry.get())))
-                    byte_array+=struct.pack('>H', np.uint16(10*float(AtrialPulseWidthEntry.get())))
-                    byte_array+=struct.pack('>H', np.uint16(10*float(VentricularPulseWidthEntry.get())))
-                    byte_array+=struct.pack('>H', np.uint16(1000*float(AtrialSensitivityEntry.get())))
-                    byte_array+=struct.pack('>H',1000*float(VentricularSensitivityEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(VRPEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(ARPEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(PVARPEntry.get()))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
+                    byte_array=struct.pack('<H', 16)
+                    byte_array+=struct.pack('<H',6)
+                    byte_array+=struct.pack('<H',np.uint16(LowerRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(UpperRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H',np.uint16(FixedAVDelayEntry.get()))
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H', np.uint16(1000*float(AtrialAmplitudeEntry.get())))
+                    byte_array+=struct.pack('<H', np.uint16(1000*float(VentricularAmplitudeEntry.get())))
+                    byte_array+=struct.pack('<H', np.uint16(10*float(AtrialPulseWidthEntry.get())))
+                    byte_array+=struct.pack('<H', np.uint16(10*float(VentricularPulseWidthEntry.get())))
+                    byte_array+=struct.pack('<H', np.uint16(1000*float(AtrialSensitivityEntry.get())))
+                    byte_array+=struct.pack('<H',1000*float(VentricularSensitivityEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(VRPEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(ARPEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(PVARPEntry.get()))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
 
 
 
@@ -1235,7 +1244,7 @@ class Window(Frame):
                         ser.write(byte_array)
                     print(byte_array)
                     time.sleep(2)
-                    print(ser.read(1))
+                    #print(ser.read(1))
 
 
                 send=Button(DDIConfigApp,text='Register Parameters',command=clicked_DDIsend)
@@ -1336,13 +1345,13 @@ class Window(Frame):
                     if int(UpperRateLimitEntry.get())>175 or int(UpperRateLimitEntry.get())<50:
                         messagebox.showinfo('Message','Invalid input for Upper Rate Limit\nMust be within 50-175ppm')
                         return
-                    if int(FixedAVDelayEntry.get)>300 or int(UpperRateLimitEntry.get())<70:
+                    if int(FixedAVDelayEntry.get())>300 or int(UpperRateLimitEntry.get())<70:
                         messagebox.showinfo('Message','Invalid input for Fixed AV Delay\nMust be within 70-300ms')
                         return
-                    if int(DynamicAVDelayEntry.get)!=0 or int(DynamicAVDelayEntry.get)!=1: # should we do min dynamic av delay with 30-100?
+                    if int(DynamicAVDelayEntry.get())!=0 or int(DynamicAVDelayEntry.get())!=1: # should we do min dynamic av delay with 30-100?
                         messagebox.showinfo('Message','Invalid Input for Dynamic AV Delay\nMust be 0 or 1')
                         return
-                    if int(SensedAVDelayEntry.get)!=0 and int(SensedAVDelayEntry.get)>-100 or int(SensedAVDelayEntry.get())<-10:
+                    if int(SensedAVDelayEntry.get())!=0 and int(SensedAVDelayEntry.get())>-100 or int(SensedAVDelayEntry.get())<-10:
                         messagebox.showinfo('Message','Invalid Input for Dynamic AV Delay\nMust be Off or within -10 - -100ms')
                         return
                     if (float(AtrialAmplitudeEntry.get()))>6.2 or (float(AtrialAmplitudeEntry.get()))<0.5:
@@ -1462,33 +1471,33 @@ class Window(Frame):
 
                     print(data_array)
 
-                    byte_array=struct.pack('>H', 16)
-                    byte_array+=struct.pack('>H',7)
-                    byte_array+=struct.pack('>H',np.uint16(LowerRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(UpperRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H',np.uint16(FixedAVDelayEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(DynamicAVDelayEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(SensedAVDelayEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(1000*float(AtrialAmplitudeEntry.get())))
-                    byte_array+=struct.pack('>H', np.uint16(1000*float(VentricularAmplitudeEntry.get())))
-                    byte_array+=struct.pack('>H', np.uint16(10*float(AtrialPulseWidthEntry.get())))
-                    byte_array+=struct.pack('>H', np.uint16(10*float(VentricularPulseWidthEntry.get())))
-                    byte_array+=struct.pack('>H', np.uint16(1000*float(AtrialSensitivityEntry.get())))
-                    byte_array+=struct.pack('>H',1000*float(VentricularSensitivityEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(VRPEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(ARPEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(PVARPEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(PVARPExtensionEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(HysteresisEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(RateSmoothEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(ATRDurationEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(ATRFallbackMEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(ATRFallbackTEntry.get()))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
+                    byte_array=struct.pack('<H', 16)
+                    byte_array+=struct.pack('<H',7)
+                    byte_array+=struct.pack('<H',np.uint16(LowerRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(UpperRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H',np.uint16(FixedAVDelayEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(DynamicAVDelayEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(SensedAVDelayEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(1000*float(AtrialAmplitudeEntry.get())))
+                    byte_array+=struct.pack('<H', np.uint16(1000*float(VentricularAmplitudeEntry.get())))
+                    byte_array+=struct.pack('<H', np.uint16(10*float(AtrialPulseWidthEntry.get())))
+                    byte_array+=struct.pack('<H', np.uint16(10*float(VentricularPulseWidthEntry.get())))
+                    byte_array+=struct.pack('<H', np.uint16(1000*float(AtrialSensitivityEntry.get())))
+                    byte_array+=struct.pack('<H',1000*float(VentricularSensitivityEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(VRPEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(ARPEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(PVARPEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(PVARPExtensionEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(HysteresisEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(RateSmoothEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(ATRDurationEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(ATRFallbackMEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(ATRFallbackTEntry.get()))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
 
 
 
@@ -1497,7 +1506,7 @@ class Window(Frame):
                         ser.write(byte_array)
                     print(byte_array)
                     time.sleep(2)
-                    print(ser.read(1))
+                    #print(ser.read(1))
 
                 send=Button(DDDConfigApp,text='Register Parameters',command=clicked_DDDsend)
                 send.place(x=50,y=610)
@@ -1623,39 +1632,39 @@ class Window(Frame):
 
                     print(data_array)
 
-                    byte_array=struct.pack('>H', 16)
-                    byte_array+=struct.pack('>H', 8)
-                    byte_array+=struct.pack('>H',np.uint16(LowerRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(UpperRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', np.uint16(1000*float(AtrialAmplitudeEntry.get())))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', np.uint16(10*float(AtrialPulseWidthEntry.get())))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', np.uint16(ActivityThresholdEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(ReactionTimeEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(ResponseFactorEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(RecoveryTimeEntry.get()))
+                    byte_array=struct.pack('<H', 16)
+                    byte_array+=struct.pack('<H', 8)
+                    byte_array+=struct.pack('<H',np.uint16(LowerRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(UpperRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(1000*float(AtrialAmplitudeEntry.get())))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(10*float(AtrialPulseWidthEntry.get())))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(ActivityThresholdEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(ReactionTimeEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(ResponseFactorEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(RecoveryTimeEntry.get()))
 
                     for k in range(2):
                         ser.write(byte_array)
                     print(byte_array)
                     time.sleep(2)
-                    print(ser.read(1))
+                    #print(ser.read(1))
 
                 send=Button(AOORConfigApp,text='Register Parameters',command=clicked_AOORsend)
                 send.place(x=50,y=280)
@@ -1838,33 +1847,33 @@ class Window(Frame):
 
                     print(data_array)
 
-                    byte_array=struct.pack('>H', 16)
-                    byte_array+=struct.pack('>H',9)
-                    byte_array+=struct.pack('>H',np.uint16(LowerRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(UpperRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H', np.uint16(1000*float(AtrialAmplitudeEntry.get())))
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H', np.uint16(10*float(AtrialPulseWidthEntry.get())))
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H', np.uint16(1000*float(AtrialSensitivityEntry.get())))
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H', np.uint16(ARPEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(PVARPEntry.get()))
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H', np.uint16(HysteresisEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(RateSmoothEntry.get()))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', np.uint16(ActivityThresholdEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(ReactionTimeEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(ResponseFactorEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(RecoveryTimeEntry.get()))
+                    byte_array=struct.pack('<H', 16)
+                    byte_array+=struct.pack('<H',9)
+                    byte_array+=struct.pack('<H',np.uint16(LowerRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(UpperRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H', np.uint16(1000*float(AtrialAmplitudeEntry.get())))
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H', np.uint16(10*float(AtrialPulseWidthEntry.get())))
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H', np.uint16(1000*float(AtrialSensitivityEntry.get())))
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H', np.uint16(ARPEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(PVARPEntry.get()))
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H', np.uint16(HysteresisEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(RateSmoothEntry.get()))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(ActivityThresholdEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(ReactionTimeEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(ResponseFactorEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(RecoveryTimeEntry.get()))
 
 
 
@@ -1872,7 +1881,7 @@ class Window(Frame):
                         ser.write(byte_array)
                     print(byte_array)
                     time.sleep(2)
-                    print(ser.read(1))
+                    #print(ser.read(1))
 
 
                 send=Button(AAIRConfigApp,text='Register Parameters',command=clicked_AAIRsend)
@@ -1941,7 +1950,7 @@ class Window(Frame):
                     if int(UpperRateLimitEntry.get())>175 or int(UpperRateLimitEntry.get())<50:
                         messagebox.showinfo('Message','Invalid input for Upper Rate Limit\nMust be within 50-175ppm')
                         return
-                    if float(VentricularAmplitudeEntry.get())>7.0 or float(VentricularAmplitudeEntry.get())<3.5:
+                    if float(VentricularAmplitudeEntry.get())>7.0 or float(VentricularAmplitudeEntry.get())<0.5:
                         messagebox.showinfo('Message','Invalid Input for Ventricular Amplitude\nMust be within 3.5-7.0V')
                         return
                     if float(VentricularPulseWidthEntry.get())>20.0 or float(VentricularPulseWidthEntry.get())<0.1:
@@ -2000,40 +2009,40 @@ class Window(Frame):
 
                     print(data_array)
 
-                    byte_array=struct.pack('>H', 16)
+                    byte_array=struct.pack('<H', 16)
 
-                    byte_array+=struct.pack('>H', 10)
-                    byte_array+=struct.pack('>H',np.uint16(LowerRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(UpperRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', np.uint16(1000*float(VentricularAmplitudeEntry.get())))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', np.uint16(10*float(VentricularPulseWidthEntry.get())))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', np.uint16(ActivityThresholdEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(ReactionTimeEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(ResponseFactorEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(RecoveryTimeEntry.get()))
+                    byte_array+=struct.pack('<H', 10)
+                    byte_array+=struct.pack('<H',np.uint16(LowerRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(UpperRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(1000*float(VentricularAmplitudeEntry.get())))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(10*float(VentricularPulseWidthEntry.get())))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(ActivityThresholdEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(ReactionTimeEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(ResponseFactorEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(RecoveryTimeEntry.get()))
 
                     for k in range(2):
                         ser.write(byte_array)
                     print(byte_array)
                     time.sleep(2)
-                    print(ser.read(1))
+                    #print(ser.read(1))
 
 
                 send=Button(VOORConfigApp,text='Register Parameters',command=clicked_VOORsend)
@@ -2106,7 +2115,7 @@ class Window(Frame):
                     if int(UpperRateLimitEntry.get())>175 or int(UpperRateLimitEntry.get())<50:
                         messagebox.showinfo('Message','Invalid input for Upper Rate Limit\nMust be within 50-175ppm')
                         return
-                    if float(VentricularAmplitudeEntry.get())>7.0 or float(VentricularAmplitudeEntry.get())<3.5:
+                    if float(VentricularAmplitudeEntry.get())>7.0 or float(VentricularAmplitudeEntry.get())<0.5:
                         messagebox.showinfo('Message','Invalid Input for Ventricular Amplitude\nMust be within 3.5-7.0V')
                         return
                     if float(VentricularPulseWidthEntry)>20.0 or float(VentricularPulseWidthEntry)<0.1:
@@ -2205,33 +2214,33 @@ class Window(Frame):
 
                     print(data_array)
 
-                    byte_array=struct.pack('>H', 16)
-                    byte_array+=struct.pack('>H',11)
-                    byte_array+=struct.pack('>H',np.uint16(LowerRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(UpperRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', np.uint16(1000*float(VentricularAmplitudeEntry.get())))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H',np.uint16(10*float(VentricularPulseWidthEntry.get())))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H',1000*float(VentricularSensitivityEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(VRPEntry.get()))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H', np.uint16(HysteresisEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(RateSmoothEntry.get()))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', np.uint16(ActivityThresholdEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(ReactionTimeEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(ResponseFactorEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(RecoveryTimeEntry.get()))
+                    byte_array=struct.pack('<H', 16)
+                    byte_array+=struct.pack('<H',11)
+                    byte_array+=struct.pack('<H',np.uint16(LowerRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(UpperRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(1000*float(VentricularAmplitudeEntry.get())))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H',np.uint16(10*float(VentricularPulseWidthEntry.get())))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H',1000*float(VentricularSensitivityEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(VRPEntry.get()))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H', np.uint16(HysteresisEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(RateSmoothEntry.get()))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(ActivityThresholdEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(ReactionTimeEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(ResponseFactorEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(RecoveryTimeEntry.get()))
 
 
 
@@ -2239,7 +2248,7 @@ class Window(Frame):
                         ser.write(byte_array)
                     print(byte_array)
                     time.sleep(2)
-                    print(ser.read(1))
+                    #print(ser.read(1))
 
                 send=Button(VVIRConfigApp,text='Register Parameters',command=clicked_VVIRsend)
                 send.place(x=50,y=400)
@@ -2332,7 +2341,7 @@ class Window(Frame):
                     if int(UpperRateLimitEntry.get())>175 or int(UpperRateLimitEntry.get())<50:
                         messagebox.showinfo('Message','Invalid input for Upper Rate Limit\nMust be within 50-175ppm')
                         return
-                    if float(VentricularAmplitudeEntry.get())>7.0 or float(VentricularAmplitudeEntry.get())<3.5:
+                    if float(VentricularAmplitudeEntry.get())>7.0 or float(VentricularAmplitudeEntry.get())<0.5:
                         messagebox.showinfo('Message','Invalid Input for Ventricular Amplitude\nMust be within 3.5-7.0V')
                         return
                     if float(VentricularPulseWidthEntry)>20.0 or float(VentricularPulseWidthEntry)<0.1:
@@ -2356,10 +2365,10 @@ class Window(Frame):
                     if int(PVARPExtensionEntry.get())>400 or int(PVARPExtensionEntry.get())<50:
                             messagebox.showinfo('Message','Invalid Input for PVARP Extension\nMust be Off or within 50-400ms')
                             return
-                    if int(FixedAVDelayEntry.get)>300 or int(UpperRateLimitEntry.get())<70:
+                    if int(FixedAVDelayEntry.get())>300 or int(FixedAVDelayEntry.get())<70:
                         messagebox.showinfo('Message','Invalid input for Fixed AV Delay\nMust be within 70-300ms')
                         return
-                    if int(DynamicAVDelayEntry.get)!=0 or int(DynamicAVDelayEntry.get)!=1: # should we do min dynamic av delay with 30-100?
+                    if int(DynamicAVDelayEntry.get())!=0 or int(DynamicAVDelayEntry.get())!=1: # should we do min dynamic av delay with 30-100?
                         messagebox.showinfo('Message','Invalid Input for Dynamic AV Delay\nMust be 0 or 1')
                         return
                     if int(ReactionTimeEntry.get())<10 or int(ReactionTimeEntry.get())>50:
@@ -2449,33 +2458,33 @@ class Window(Frame):
 
                     print(data_array)
 
-                    byte_array=struct.pack('>H', 16)
-                    byte_array+=struct.pack('>H',12)
-                    byte_array+=struct.pack('>H',np.uint16(LowerRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(UpperRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H',np.uint16(FixedAVDelayEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(DynamicAVDelayEntry.get()))
-                    byte_array+=struct.pack('>H',0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', np.uint16(1000*float(VentricularAmplitudeEntry.get())))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H',np.uint16(10*float(VentricularPulseWidthEntry.get())))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H',1000*float(VentricularSensitivityEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(VRPEntry.get()))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H',np.uint16(PVARPExtension.get()))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', np.uint16(RateSmoothEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(ATRDurationEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(ATRFallbackMEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(ATRFallbackTEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(ActivityThresholdEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(ReactionTimeEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(ResponseFactorEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(RecoveryTimeEntry.get()))
+                    byte_array=struct.pack('<H', 16)
+                    byte_array+=struct.pack('<H',12)
+                    byte_array+=struct.pack('<H',np.uint16(LowerRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(UpperRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H',np.uint16(FixedAVDelayEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(DynamicAVDelayEntry.get()))
+                    byte_array+=struct.pack('<H',0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(1000*float(VentricularAmplitudeEntry.get())))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H',np.uint16(10*float(VentricularPulseWidthEntry.get())))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H',1000*float(VentricularSensitivityEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(VRPEntry.get()))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H',np.uint16(PVARPExtension.get()))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(RateSmoothEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(ATRDurationEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(ATRFallbackMEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(ATRFallbackTEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(ActivityThresholdEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(ReactionTimeEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(ResponseFactorEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(RecoveryTimeEntry.get()))
 
 
 
@@ -2484,7 +2493,7 @@ class Window(Frame):
                         ser.write(byte_array)
                     print(byte_array)
                     time.sleep(2)
-                    print(ser.read(1))
+                    #print(ser.read(1))
 
 
 
@@ -2539,6 +2548,10 @@ class Window(Frame):
                 RecoveryTimelabel.place(x=10, y=310)
                 RecoveryTimeEntry=Entry(DOORConfigApp)
                 RecoveryTimeEntry.place(x=200,y=310)
+                FixedAVDelaylabel= Label(DOORConfigApp, text="Fixed AV Delay[ms]: ")
+                FixedAVDelaylabel.place(x=10, y=340)
+                FixedAVDelayEntry= Entry(DOORConfigApp)
+                FixedAVDelayEntry.place(x=200,y=340)
 
                 def clicked_DOORsend( ):
                     if int(UpperRateLimitEntry.get())<int(LowerRateLimitEntry.get()):
@@ -2568,12 +2581,16 @@ class Window(Frame):
                     if float(AtrialPulseWidthEntry.get())>20.0 or float(AtrialPulseWidthEntry.get())<0.1:
                         messagebox.showinfo('Message','Invalid Input for Atrial Pulse Width\nMust be within 0.1-1.9ms (20ms max for testing purposes)')
                         return
-                    if float(VentricularAmplitudeEntry.get())>7.0 or float(VentricularAmplitudeEntry.get())<3.5:
+                    if float(VentricularAmplitudeEntry.get())>7.0 or float(VentricularAmplitudeEntry.get())<0.5:
                         messagebox.showinfo('Message','Invalid Input for Ventricular Amplitude\nMust be within 3.5-7.0V')
                         return
                     if float(VentricularPulseWidthEntry.get())>20.0 or float(VentricularPulseWidthEntry.get())<0.1:
                         messagebox.showinfo('Message','Invalid Input for Ventricular Pulse Width\nMust be within 0.1-1.9ms(20ms max for testing purposes)')
                         return
+                    if int(FixedAVDelayEntry.get())>300 or int(FixedAVDelayEntry.get())<70:
+                        messagebox.showinfo('Message','Invalid input for Fixed AV Delay\nMust be within 70-300ms')
+                        return
+
                     f=open(paramfilename,"a")
                     f.write("Pacing mode: DOOR \n")
                     f.write("Lower Rate Limit: ")
@@ -2636,39 +2653,39 @@ class Window(Frame):
 
                     print(data_array)
 
-                    byte_array=struct.pack('>H', 16)
-                    byte_array+=struct.pack('>H', 13)
-                    byte_array+=struct.pack('>H',np.uint16(LowerRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H',np.uint16(UpperRateLimitEntry.get()))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', np.uint16(1000*float(AtrialAmplitudeEntry.get())))
-                    byte_array+=struct.pack('>H', np.uint16(1000*float(VentricularAmplitudeEntry.get())))
-                    byte_array+=struct.pack('>H', np.uint16(10*float(AtrialPulseWidthEntry.get())))
-                    byte_array+=struct.pack('>H', np.uint16(10*float(VentricularPulseWidthEntry.get())))
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', 0)
-                    byte_array+=struct.pack('>H', np.uint16(ActivityThresholdEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(ReactionTimeEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(ResponseFactorEntry.get()))
-                    byte_array+=struct.pack('>H', np.uint16(RecoveryTimeEntry.get()))
+                    byte_array=struct.pack('<H', 16)
+                    byte_array+=struct.pack('<H', 13)
+                    byte_array+=struct.pack('<H',np.uint16(LowerRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H',np.uint16(UpperRateLimitEntry.get()))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(FixedAVDelayEntry.get()))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(1000*float(AtrialAmplitudeEntry.get())))
+                    byte_array+=struct.pack('<H', np.uint16(1000*float(VentricularAmplitudeEntry.get())))
+                    byte_array+=struct.pack('<H', np.uint16(10*float(AtrialPulseWidthEntry.get())))
+                    byte_array+=struct.pack('<H', np.uint16(10*float(VentricularPulseWidthEntry.get())))
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', 0)
+                    byte_array+=struct.pack('<H', np.uint16(ActivityThresholdEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(ReactionTimeEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(ResponseFactorEntry.get()))
+                    byte_array+=struct.pack('<H', np.uint16(RecoveryTimeEntry.get()))
 
                     for k in range(2):
                         ser.write(byte_array)
                     print(byte_array)
                     time.sleep(2)
-                    print(ser.read(1))
+                    #print(ser.read(1))
 
 
 
